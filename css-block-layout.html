@@ -78,6 +78,38 @@
       margin: 0;
     }
 
+    .d2 {
+      display: block;
+      width: 600px;
+      margin: auto;
+      font-size: 0;
+    }
+    .d2 span {
+      display: inline-block;
+      font-size: medium;
+      width: 180px;
+      height: 40px;
+      border: 3px solid black;
+      box-sizing: border-box;
+      background-color: #F9F5EB;
+      text-align: center;
+      line-height: 34px;
+      color: #002B5B;
+
+    }
+
+    .d2 span:nth-child(3n+1) {
+      margin: 7.5px 15px 7.5px 0;
+    }
+
+    .d2 span:nth-child(3n+2) {
+      margin: 7.5px 15px 7.5px 15px;
+    }
+
+    .d2 span:nth-child(3n+3) {
+      margin: 7.5px 0 7.5px 15px;
+    }
+
 
 
 
@@ -106,6 +138,22 @@
     <div>产品</div>
     <div>产品</div>
   </div>
+
+  <span class="d2">
+    <span>宽180高40(包含边框)</span>
+    <span>产品</span>
+    <span>产品</span>
+    <span>水平间隙30px</span>
+    <span>产品</span>
+    <span>产品</span>
+    <span>垂直间隙15px</span>
+    <span>产品</span>
+    <span>产品</span>
+    <span>边框宽度3px</span>
+    <span>产品</span>
+    <span>产品</span>
+  </span>
+
     <p class="p3">link</p>
     <p class="p3">link</p>
     <p class="p3">link</p>
