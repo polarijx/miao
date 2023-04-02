@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+     .menu {
+      width: 100%;
+      height: 50px;
+      background-color: #F1F6F9;
+      font-size: 0;
+     }
+
+     ul li {
+      list-style: none;
+     }
+
+     span {
+      margin: 10px;
+      line-height: 50px;
+     }
+
+     .menu-p {
+      position: relative;
+      font-size: medium;
+      display: inline-block;
+      width: 170px;
+      height: 50px;
+      background-color: #14274E;
+      color: #F1F6F9;
+      border-right: 1px solid black;
+      box-sizing: border-box;
+     }
+
+     .list {
+      position: absolute;
+     }
+
+     .expand1{
+      position: relative;
+      display: none;
+      width: 170px;
+      height: 50px;
+      border-right: 1px solid black;
+      border-bottom: 1px solid black;
+      box-sizing: border-box;
+      background-color: #394867;
+      color: #F1F6F9;
+     }
+
+     .menu-p:hover .expand1 {
+      display: block;
+     }
+
+     .expand2 {
+      display: none;
+      position: absolute;
+      left: 170px;
+      top: 0;
+      width: 320px;
+      height: 50px;
+      background-color: #9BA4B4;
+      color: #F1F6F9;
+
+     }
+
+     .expand1:hover .expand2 {
+      display: block;
+     }
+
+
+
+
+
+
+
+
+  </style>
+
+</head>
+<body>
+  <div class="menu">
+      <div class="menu-p">
+        <span>References</span>
+        <ul class="list">
+            <li class="expand1">
+              <span>HTML</span>
+              <ul>
+                <li class="expand2">
+                  <span>Structure of content on the web</span>
+                </li>
+              </ul>
+            </li>
+
+            <li class="expand1">
+              <span>CSS</span>
+              <ul class="expand2">
+                <li>
+                  <span>Code used to describe document style</span>
+                </li>
+              </ul>
+            </li>
+
+            <li class="expand1">
+              <span>JavaScript</span>
+              <ul>
+                <li class="expand2">
+                  <span>General-purpose scripting language</span>
+                </li>
+              </ul>
+            </li>
+
+            <li class="expand1">
+              <span>HTTP</span>
+              <ul>
+                <li class="expand2">
+                  <span>Protocol for transmitting web resources</span>
+                </li>
+              </ul>
+            </li>
+
+            <li class="expand1">
+              <span>Web APIs</span>
+              <ul>
+                <li class="expand2">
+                  <span>Interfaces for building web applications</span>
+                </li>
+              </ul>
+            </li>
+
+            <li class="expand1">
+              <span>Web Extensions</span>
+              <ul>
+                <li class="expand2">
+                  <span>Developing extensions for web browsers</span>
+                </li>
+              </ul>
+            </li>
+
+            <li class="expand1">
+              <span>Web Technology</span>
+              <ul>
+                <li class="expand2">
+                  <span>Web technology reference for developers</span>
+                </li>
+              </ul>
+            </li>
+        </ul>
+      </div>
+
+      <li class="menu-p">
+          <span>Guides</span>
+          <ul class="list">
+            <li class="expand1">
+              <span>MDN Learning Area</span>
+              <ul>
+                <li class="expand2">
+                  <span>Learn web development</span>
+                </li>
+              </ul>
+            </li>
+
+            <li class="expand1">
+              <span>HTML</span>
+              <ul>
+                <li class="expand2">
+                  <span>Learn to structure web content with HTML</span>
+                </li>
+              </ul>
+            </li>
+
+            <li class="expand1">
+              <span>CSS</span>
+              <ul>
+                <li class="expand2">
+                  <span>Learn to style content using CSS</span>
+                </li>
+              </ul>
+            </li>
+            <li class="expand1">
+              <span>JavaScript</span>
+              <ul>
+                <li class="expand2">
+                  <span>Learn to run scripts in the browser</span>
+                </li>
+              </ul>
+            </li>
+            <li class="expand1">
+              <span>Accessibility</span>
+              <ul>
+                <li class="expand2">
+                  <span>Learn to make the web accessible to all</span>
+                </li>
+              </ul>
+            </li>
+        </ul>
+      </li>
+
+      <li class="menu-p">
+        <span class="parent">MDN Plus</span>
+        <ul class="list">
+          <li class="expand1">
+            <span>Overview</span>
+            <ul>
+              <li class="expand2">
+                <span>A customized MDN experience</span>
+              </li>
+            </ul>
+          </li>
+
+          <li class="expand1">
+            <span>Updates</span>
+            <ul>
+              <li class="expand2">
+                <span>All browser compatibility updates at a glance</span>
+              </li>
+            </ul>
+          </li>
+
+          <li class="expand1">
+            <span>Documentation</span>
+            <ul>
+              <li class="expand2">
+                <span>Learn how to use MDN Plus</span>
+              </li>
+            </ul>
+          </li>
+
+          <li class="expand1">
+            <span>FAQ</span>
+            <ul>
+              <li class="expand2">
+                <span>Frequently asked questions about MDN Plus</span>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+  </div>
+</body>
+</html>
