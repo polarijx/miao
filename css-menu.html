@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>css-menu</title>
 
   <style>
     * {
@@ -12,9 +12,6 @@
       padding: 0;
     }
 
-    html {
-      min-width: 920px;
-    }
      .menu {
       width: 100%;
       height: 50px;
@@ -40,6 +37,7 @@
       background-color: #14274E;
       color: #F1F6F9;
       border-right: 1px solid black;
+      border-bottom: 1px solid black;
       box-sizing: border-box;
      }
 
@@ -63,12 +61,17 @@
       display: block;
      }
 
+     .menu-p:hover {
+      opacity: 0.9;
+      cursor: pointer;
+     }
+
      .expand2 {
       display: none;
       position: absolute;
       left: 170px;
       top: 0;
-      width: 350px;
+      width: 360px;
       height: 50px;
       background-color: #9BA4B4;
       color: #F1F6F9;
@@ -77,6 +80,11 @@
 
      .expand1:hover .expand2 {
       display: block;
+     }
+
+     .expand1:hover {
+      opacity: 0.9;
+      cursor: pointer;
      }
 
 
