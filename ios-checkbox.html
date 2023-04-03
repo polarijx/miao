@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ios-checkbox</title>
+
+  <style>
+    .ios-checkbox {
+      display: block;
+      position: relative;
+      width: 270px;
+      height: 160px;
+      border-radius: 80px;
+      border: 1px solid grey;
+      background-color: #cccccc;
+    }
+
+    .check {
+      display: none;
+    }
+
+    .slider {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 80px;
+      transition: .7s;
+      transition-timing-function: cubic-bezier(.66,.13,.39,.89);
+    }
+
+    .slider::before {
+      position: absolute;
+      content:"";
+      width: 150px;
+      height: 150px;
+      top: 5px;
+      left: 5px;
+      border-radius: 80px;
+      box-shadow: 0 0 10px grey;
+      background-color: white;
+      transition: .5s;
+      transition-timing-function: cubic-bezier(.66,.13,.39,.89);
+      z-index: 2;
+
+    }
+
+    .slider::after {
+      position: absolute;
+      content:"";
+      width: 270px;
+      height: 160px;
+      top: 0;
+      left: 0;
+      border-radius: 80px;
+      background-color: white;
+      transition: .75s;
+      transition-timing-function: cubic-bezier(.68,0,.25,0.4);
+      z-index: 1;
+    }
+
+    .check:checked+.slider::before {
+      position: absolute;
+      content:"";
+      width: 150px;
+      height: 150px;
+      top: 5px;
+      left: 115px;
+      border-radius: 80px;
+      box-shadow: 0 0 10px grey;
+    }
+
+    .check:checked+.slider::after {
+      position: absolute;
+      content:"";
+      width: 0;
+      height: 0;
+      top: 80px;
+      left: 205px;
+      border-radius: 80px;
+      background-color: white;
+    }
+
+    .check:checked+.slider {
+      background-color: #30f34d;
+    }
+
+  </style>
+
+</head>
+<body>
+  <label class="ios-checkbox">
+    <input class="check" type="checkbox" name="" id="">
+    <span class="slider"></span>
+  </label>
+</body>
+</html>
