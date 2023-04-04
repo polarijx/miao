@@ -10,24 +10,38 @@
       width: 100px;
       height: 100px;
       overflow: hidden;
+      position: relative;
+      display: block;
+      background-color: white;
+    }
+    .checkbox {
+      display: none;
+      position: absolute;
+
+
     }
 
-    .heart {
+    .checkcbox +label {
+      position: absolute;
+      display: block;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
       margin-left: 0;
-
     }
 
-    .heart:hover {
+    .checkbox:checked +label {
       margin-left: -2800px;
-      transition: steps(28) 2s;
+      transition: steps(28) 2s ;
     }
+
   </style>
 </head>
 <body>
-  <div>
-    <div class="box">
-      <img src="manyheart.png" alt="" class="heart">
-    </div>
+  <div class="box">
+    <input type="checkbox" class="checkbox" id="cb">
+    <label for="cb"><img  src="manyheart.png" alt=""></label>
   </div>
-</body>
+  </body>
 </html>
