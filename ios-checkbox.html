@@ -13,8 +13,8 @@
       width: 270px;
       height: 160px;
       border-radius: 80px;
-      border: 1px solid grey;
-      background-color: white;
+      border: 3px solid grey;
+      background-color: #cccccc;
     }
 
     .check {
@@ -35,15 +35,14 @@
     .slider::before {
       position: absolute;
       content:"";
-      width: 150px;
+      right: 115px;
       height: 150px;
       top: 5px;
       left: 5px;
       border-radius: 80px;
-      box-shadow: 0 0 10px grey;
+      box-shadow: 0 0 15px grey;
       background-color: white;
-      transition: .5s;
-      transition-timing-function: cubic-bezier(.66,.13,.39,.89);
+      transition: left .5s cubic-bezier(.19,.37,.68,.78), right .5s cubic-bezier(.66,.13,.39,.89);
       z-index: 2;
 
     }
@@ -65,12 +64,13 @@
     .check:checked+.slider::before {
       position: absolute;
       content:"";
-      width: 150px;
+      right: 5px;
       height: 150px;
       top: 5px;
       left: 115px;
       border-radius: 80px;
       box-shadow: 0 0 10px grey;
+      transition: left .5s cubic-bezier(.66,.13,.39,.89), right .5s cubic-bezier(.19,.37,.68,.78);
     }
 
     .check:checked+.slider::after {
