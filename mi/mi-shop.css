@@ -429,6 +429,8 @@ body {
   vertical-align: middle;
   text-align: center;
   background-color: #fff;
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
+  transition: 1s;
 }
 .display .miphone2 .cards2 .cards-item img {
   width: 160px;
@@ -440,6 +442,10 @@ body {
 }
 .display .miphone2 .cards2 .cards-item:first-child {
   grid-row-end: span 2;
+}
+.display .miphone2 .cards2 .cards-item:hover {
+  transform: translate(0, -2px);
+  box-shadow: 0 3px 15px 0 #adadad;
 }
 .sticky-side-tools {
   width: 90px;
