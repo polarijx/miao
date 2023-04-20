@@ -475,59 +475,6 @@ body {
   font-size: 22px;
   font-weight: 200;
 }
-.display .home-devices .category {
-  float: right;
-  display: flex;
-  line-height: 60px;
-  flex: 1;
-}
-.display .home-devices .category:hover > span {
-  color: #000;
-  transition: none;
-}
-.display .home-devices .category > span {
-  color: #000;
-  transition: 0s, 9999s;
-  padding-left: 10px;
-  padding-right: 10px;
-  font-size: 16px;
-}
-.display .home-devices .category > span:hover {
-  color: #ff6700;
-  transition: none;
-}
-.display .home-devices .category:has(span:nth-child(1):hover) ~ .hd-container > .devices-items > .page:nth-child(1) {
-  visibility: visible;
-  transition: none;
-}
-.display .home-devices .category:has(span:nth-child(1):hover) ~ .hd-container > .devices-items > .page:not(:nth-child(1)) {
-  visibility: hidden;
-  transition: 0, 9999s;
-}
-.display .home-devices .category:has(span:nth-child(2):hover) ~ .hd-container > .devices-items > .page:nth-child(2) {
-  visibility: visible;
-  transition: none;
-}
-.display .home-devices .category:has(span:nth-child(2):hover) ~ .hd-container > .devices-items > .page:not(:nth-child(2)) {
-  visibility: hidden;
-  transition: 0, 9999s;
-}
-.display .home-devices .category:has(span:nth-child(3):hover) ~ .hd-container > .devices-items > .page:nth-child(3) {
-  visibility: visible;
-  transition: none;
-}
-.display .home-devices .category:has(span:nth-child(3):hover) ~ .hd-container > .devices-items > .page:not(:nth-child(3)) {
-  visibility: hidden;
-  transition: 0, 9999s;
-}
-.display .home-devices .category:has(span:nth-child(4):hover) ~ .hd-container > .devices-items > .page:nth-child(4) {
-  visibility: visible;
-  transition: none;
-}
-.display .home-devices .category:has(span:nth-child(4):hover) ~ .hd-container > .devices-items > .page:not(:nth-child(4)) {
-  visibility: hidden;
-  transition: 0, 9999s;
-}
 .display .home-devices .hd-container {
   width: 100%;
   height: 614px;
@@ -556,9 +503,71 @@ body {
   grid-template-columns: repeat(4, 234px);
   grid-template-rows: repeat(4, 143px);
   gap: 14px;
+  visibility: hidden;
+  transition: 0s, 9999s;
+}
+.display .home-devices .hd-container .devices-items .page:first-child {
+  visibility: visible;
+}
+.display .home-devices .hd-container .devices-items .page:hover {
+  visibility: visible;
+  transition: none;
 }
 .display .home-devices .hd-container .devices-items .page > img:nth-child(-n+7) {
   grid-row: span 2;
+}
+.display .home-devices .category {
+  float: right;
+  display: flex;
+  line-height: 60px;
+  flex: 1;
+}
+.display .home-devices .category:hover > span {
+  color: #000;
+  transition: none;
+}
+.display .home-devices .category > span {
+  color: #000;
+  transition: 0s, 9999s;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 16px;
+}
+.display .home-devices .category > span:hover {
+  color: #ff6700;
+  transition: none;
+}
+.display .home-devices .category:has(span:nth-child(1):hover) ~ .hd-container > .devices-items > .page:nth-child(1) {
+  visibility: visible;
+  transition: none;
+}
+.display .home-devices .category:has(span:nth-child(1):hover) ~ .hd-container > .devices-items > .page:not(:nth-child(1)) {
+  visibility: hidden;
+  transition: none;
+}
+.display .home-devices .category:has(span:nth-child(2):hover) ~ .hd-container > .devices-items > .page:nth-child(2) {
+  visibility: visible;
+  transition: none;
+}
+.display .home-devices .category:has(span:nth-child(2):hover) ~ .hd-container > .devices-items > .page:not(:nth-child(2)) {
+  visibility: hidden;
+  transition: none;
+}
+.display .home-devices .category:has(span:nth-child(3):hover) ~ .hd-container > .devices-items > .page:nth-child(3) {
+  visibility: visible;
+  transition: none;
+}
+.display .home-devices .category:has(span:nth-child(3):hover) ~ .hd-container > .devices-items > .page:not(:nth-child(3)) {
+  visibility: hidden;
+  transition: none;
+}
+.display .home-devices .category:has(span:nth-child(4):hover) ~ .hd-container > .devices-items > .page:nth-child(4) {
+  visibility: visible;
+  transition: none;
+}
+.display .home-devices .category:has(span:nth-child(4):hover) ~ .hd-container > .devices-items > .page:not(:nth-child(4)) {
+  visibility: hidden;
+  transition: none;
 }
 .sticky-side-tools {
   width: 100px;
