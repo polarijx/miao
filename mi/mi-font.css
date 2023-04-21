@@ -1,0 +1,52 @@
+  @font-face {
+    font-family: MiFont;
+    src: url(./mi-icon-font.ttf);
+  }
+  .icon {
+    font-family: MiFont;
+  }
+  .weibo::before {
+    content: '\e630'
+  }
+  .credit::before {
+    content: '\e63b'
+  }
+  .loop::before {
+    content: '\e63b'
+  }
+
+  .search-btn::before {
+    content: "\e616";
+    font-size: 30px;
+  }
+
+  .phone::before {
+    content: "\e908";
+    font-size: 30px;
+  }
+
+  .man::before {
+    content: "\e604";
+    font-size: 30px;
+  }
+
+  .tool::before {
+    content: "\e634";
+    font-size: 30px;
+  }
+
+  .call::before {
+    content: "\e610";
+    font-size: 30px;
+  }
+
+  .cart::before {
+    content: "\e60c";
+    font-size: 30px;
+  }
+
+  .cart-sm::before {
+    content: "\e60c";
+    font-size: 16px;
+    vertical-align: bottom;
+  }

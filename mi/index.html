@@ -5,15 +5,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>mi-shop</title>
-  <link rel="stylesheet" href="mi-shop.css">
+  <link rel="stylesheet" href="./mi-shop.css">
+  <link rel="stylesheet" href="mi-font.css">
 </head>
 <body>
   <div class="sticky-side-tools">
-    <div class="tool-item">手机app</div>
-    <div class="tool-item">个人中心</div>
-    <div class="tool-item">售后服务</div>
-    <div class="tool-item">人工客服</div>
-    <div class="tool-item">购物车</div>
+    <div class="tool-item"><span class="phone icon"></span><span>手机app</span></div>
+    <div class="tool-item"><span class="man icon"></span><span>个人中心</span></div>
+    <div class="tool-item"><span class="tool icon"></span><span>售后服务</span></div>
+    <div class="tool-item"><span class="call icon"></span><span>人工客服</span></div>
+    <div class="tool-item"><span class="cart icon"></span><span>购物车</span></div>
   </div>
 
   <div class="main">
@@ -39,11 +40,11 @@
             小米商城APP
             </span>
           </a><span class="sep">|</span>
-          <a href="javascript:;" class="J_siteGlobalRegion">Select Location</a>
+          <a href="#">Select Location</a>
         </div>
         <div class="topbar-cart">
           <a href="https://www.mi.com/shop/buy/cart">
-            <em class="iconfont-cart-full"></em>购物车<span class="cart-mini-num J_cartNum">（0）</span>
+            <span class="icon cart-sm"></span>购物车（0）
           </a>
           <div class="cart-menu">
             <div class="menu-content">
@@ -52,9 +53,9 @@
           </div>
         </div>
         <div class="topbar-info">
-          <a href="javascript:void(0);" class="link">登录</a> <span class="sep">|</span>
-          <a href="javascript:void(0);" class="link">注册</a><span class="sep">|</span>
-          <a href="javascript:void(0);" class="J_needAgreement">消息通知</a>
+          <a href="#" class="link">登录</a> <span class="sep">|</span>
+          <a href="#" class="link">注册</a><span class="sep">|</span>
+          <a href="#">消息通知</a>
         </div>
       </div>
     </div>
@@ -207,7 +208,7 @@
       <!-- 搜索 -->
       <div class="search">
         <input type="text" placeholder="手机">
-        <button><i class="iconfont-btn"></i></button>
+        <button><span class="search-btn icon"></span></button>
       </div>
     </div>
 

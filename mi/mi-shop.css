@@ -16,10 +16,6 @@ body {
   font: 14px/1.5 Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
   overflow: scroll;
 }
-@font-face {
-  font-family: MiFont;
-  src: url(mi-icon-font.ttf);
-}
 .main {
   width: 100%;
   background-color: #fff;
@@ -92,15 +88,23 @@ body {
   background-color: #424242;
   position: relative;
 }
+.header .container .topbar-cart > a > span {
+  vertical-align: bottom;
+}
 .header .container .topbar-cart:hover {
   background-color: #fff;
   color: #ff6700;
   z-index: 999;
 }
+.header .container .topbar-cart:hover > a > span {
+  color: #fd6600;
+}
 .header .container .topbar-cart:hover .cart-menu {
   height: 100px;
   box-shadow: 0 3px 15px 0 #adadad;
   background-color: #fff;
+  text-align: center;
+  line-height: 100px;
 }
 .header .container .topbar-cart .cart-menu {
   transition: 0.6s;
@@ -110,6 +114,8 @@ body {
   width: 320px;
   height: 0;
   overflow: hidden;
+  text-align: center;
+  line-height: 100px;
 }
 .header .container .topbar-info {
   float: right;
@@ -626,16 +632,20 @@ body {
   transition: none;
 }
 .sticky-side-tools {
-  width: 100px;
+  width: 84px;
   position: fixed;
   right: 0;
   bottom: 50px;
   background-color: #fff;
 }
 .sticky-side-tools .tool-item {
-  height: 90px;
-  line-height: 90px;
+  height: 92px;
+  width: 84px;
   text-align: center;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
 }
 @media (max-width: 1460px) {
   .sticky-side-tools {
