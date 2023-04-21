@@ -1,7 +1,5 @@
 * {
   margin: 0;
-  background-color: rgba(0, 0, 0, 0.03);
-  box-shadow: inset 0 0 1px #579BB1;
 }
 html {
   margin: 0;
@@ -125,7 +123,6 @@ body {
   align-items: center;
   width: 1226px;
   margin: auto;
-  xfont-size: 0;
 }
 .site-header .nav-list {
   display: flex;
@@ -420,6 +417,10 @@ body {
   box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
   transition: 1s;
 }
+.display .miphone .cards .cards-item > a {
+  height: inherit;
+  display: block;
+}
 .display .miphone .cards .cards-item:first-child {
   height: 100%;
 }
@@ -455,12 +456,17 @@ body {
   padding: 0;
 }
 .display .miphone2 .cards2 .cards-item {
+  height: 100%;
   list-style: none;
   vertical-align: middle;
   text-align: center;
   background-color: #fff;
   box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
   transition: 1s;
+}
+.display .miphone2 .cards2 .cards-item > a {
+  height: inherit;
+  display: block;
 }
 .display .miphone2 .cards2 .cards-item img {
   width: 160px;
@@ -510,6 +516,7 @@ body {
   position: relative;
 }
 .display .home-devices .hd-container .devices-items .page {
+  list-style: none;
   position: absolute;
   display: grid;
   width: 100%;
@@ -519,6 +526,37 @@ body {
   gap: 14px;
   visibility: hidden;
   transition: 0s, 9999s;
+  padding: 0;
+}
+.display .home-devices .hd-container .devices-items .page > .page-item {
+  height: 100%;
+  background-color: #fff;
+  text-align: center;
+  transition: 1s -9999s;
+}
+.display .home-devices .hd-container .devices-items .page > .page-item:hover {
+  transform: translate(0, -2px);
+  box-shadow: 0 3px 15px 0 #adadad;
+  transition: 1s;
+}
+.display .home-devices .hd-container .devices-items .page > .page-item:nth-child(-n+7) {
+  grid-row: span 2;
+}
+.display .home-devices .hd-container .devices-items .page > .page-item:nth-child(8) > a {
+  line-height: 143px;
+}
+.display .home-devices .hd-container .devices-items .page > .page-item:nth-child(8) > a > img {
+  height: 80px;
+  width: 80px;
+}
+.display .home-devices .hd-container .devices-items .page > .page-item > a {
+  line-height: 300px;
+  height: inherit;
+  display: block;
+}
+.display .home-devices .hd-container .devices-items .page > .page-item > a > img {
+  height: 160px;
+  width: 160px;
 }
 .display .home-devices .hd-container .devices-items .page:first-child {
   visibility: visible;
@@ -526,9 +564,6 @@ body {
 .display .home-devices .hd-container .devices-items .page:hover {
   visibility: visible;
   transition: none;
-}
-.display .home-devices .hd-container .devices-items .page > img:nth-child(-n+7) {
-  grid-row: span 2;
 }
 .display .home-devices .category {
   float: right;
