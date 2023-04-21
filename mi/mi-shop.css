@@ -508,6 +508,13 @@ body {
   grid-template-rows: 300px 300px;
   gap: 14px;
 }
+.display .home-devices .hd-container .fixed > img {
+  transition: 1s ease;
+}
+.display .home-devices .hd-container .fixed > img:hover {
+  transform: translate(0, -2px);
+  box-shadow: 0 3px 15px 0 #adadad;
+}
 .display .home-devices .hd-container .devices-items {
   margin-left: 14px;
   height: 100%;
@@ -532,12 +539,11 @@ body {
   height: 100%;
   background-color: #fff;
   text-align: center;
-  transition: 1s -9999s;
+  transition: transform 1s ease, box-shadow 1s ease;
 }
 .display .home-devices .hd-container .devices-items .page > .page-item:hover {
   transform: translate(0, -2px);
   box-shadow: 0 3px 15px 0 #adadad;
-  transition: 1s;
 }
 .display .home-devices .hd-container .devices-items .page > .page-item:nth-child(-n+7) {
   grid-row: span 2;
@@ -585,6 +591,7 @@ body {
 .display .home-devices .category > span:hover {
   color: #ff6700;
   transition: none;
+  cursor: pointer;
 }
 .display .home-devices .category:has(span:nth-child(1):hover) ~ .hd-container > .devices-items > .page:nth-child(1) {
   visibility: visible;
@@ -704,6 +711,9 @@ body {
   justify-content: center;
   align-content: center;
   text-align: center;
+}
+.last .site-footer .footer-itmes .tel > * {
+  display: block;
 }
 .last .site-footer .footer-itmes .tel .num {
   font-size: 22px;
