@@ -1,7 +1,5 @@
 * {
   margin: 0;
-  background-color: rgba(0, 0, 0, 0.03);
-  box-shadow: inset 0 0 1px #579BB1;
 }
 html {
   margin: 0;
@@ -141,6 +139,7 @@ body {
 }
 .site-header .nav-list:hover > .nav-item > .item-children > .container {
   height: 230px;
+  z-index: 999;
 }
 .site-header .nav-list .nav-item {
   height: 100px;
