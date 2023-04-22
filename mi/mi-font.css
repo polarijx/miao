@@ -33,6 +33,7 @@
   .tool::before {
     content: "\e634";
     font-size: 30px;
+    color: #616161;
   }
 
   .call::before {
@@ -54,4 +55,28 @@
   .arrow::before {
     content: "\e615";
     font-size: 70px;
+  }
+
+  .seven::before {
+    content: "\e635";
+    font-size: 30px;
+    color: #616161;
+  }
+
+  .fifteen::before {
+    content: "\e636";
+    font-size: 30px;
+    color: #616161;
+  }
+
+  .gift::before {
+    content: "\e638";
+    font-size: 30px;
+    color: #616161;
+  }
+
+  .local::before {
+    content: "\e637";
+    font-size: 30px;
+    color: #616161;
   }

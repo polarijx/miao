@@ -797,12 +797,17 @@ body {
   line-height: 25px;
   color: #616161;
 }
+.last .site-footer .footer-service > div > span::before {
+  vertical-align: middle;
+  margin-right: 10px;
+}
 .last .site-footer .footer-service > div:hover {
   color: #ff6700;
 }
-.last .site-footer .footer-service span {
+.last .site-footer .footer-service > span {
   margin: 0 0.3em;
   color: #e0e0e0;
+  vertical-align: middle;
 }
 .last .site-footer .footer-itmes {
   display: flex;
