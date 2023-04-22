@@ -567,8 +567,64 @@ body {
 .display .home-devices .hd-container .devices-items .page > .page-item:nth-child(-n+7) {
   grid-row: span 2;
 }
+.display .home-devices .hd-container .devices-items .page > .page-item:nth-child(-n+7) a {
+  height: inherit;
+  display: block;
+  text-decoration: none;
+}
+.display .home-devices .hd-container .devices-items .page > .page-item:nth-child(-n+7) a > .title {
+  color: #000;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  margin: 0 10px 2px;
+  font-weight: 400;
+}
+.display .home-devices .hd-container .devices-items .page > .page-item:nth-child(-n+7) a > p {
+  color: #b0b0b0;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  margin: 0 10px 2px;
+}
+.display .home-devices .hd-container .devices-items .page > .page-item:nth-child(-n+7) a > p + p {
+  color: #ff6700;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  margin: 0 10px 2px;
+}
+.display .home-devices .hd-container .devices-items .page > .page-item:nth-child(-n+7) a > p + p > del > span {
+  color: #b0b0b0;
+}
+.display .home-devices .hd-container .devices-items .page > .page-item:nth-child(-n+7) a > img {
+  height: 160px;
+  width: 160px;
+}
 .display .home-devices .hd-container .devices-items .page > .page-item:nth-child(8) > a {
-  line-height: 143px;
+  text-decoration: none;
+  margin: auto;
+  height: inherit;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: left;
+  justify-content: center;
+}
+.display .home-devices .hd-container .devices-items .page > .page-item:nth-child(8) > a > .title {
+  width: 100px;
+  color: #000;
+  font-weight: 400;
+  white-space: wrap;
+  margin: 0 20px 2px;
+}
+.display .home-devices .hd-container .devices-items .page > .page-item:nth-child(8) > a > .price {
+  margin: 0 20px 2px;
+  color: #ff6700;
 }
 .display .home-devices .hd-container .devices-items .page > .page-item:nth-child(8) > a > img {
   height: 80px;
@@ -595,15 +651,6 @@ body {
 .display .home-devices .hd-container .devices-items .page > .page-item:last-child > div > span::before {
   line-height: 45px;
   color: #ff6700;
-}
-.display .home-devices .hd-container .devices-items .page > .page-item > a {
-  line-height: 300px;
-  height: inherit;
-  display: block;
-}
-.display .home-devices .hd-container .devices-items .page > .page-item > a > img {
-  height: 160px;
-  width: 160px;
 }
 .display .home-devices .hd-container .devices-items .page:first-child {
   visibility: visible;
