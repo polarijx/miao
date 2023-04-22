@@ -574,6 +574,28 @@ body {
   height: 80px;
   width: 80px;
 }
+.display .home-devices .hd-container .devices-items .page > .page-item:last-child {
+  display: flex;
+  font-size: 18px;
+  color: #333;
+  justify-content: center;
+  align-items: center;
+}
+.display .home-devices .hd-container .devices-items .page > .page-item:last-child > div {
+  height: 45px;
+  padding: 0.5em;
+}
+.display .home-devices .hd-container .devices-items .page > .page-item:last-child > div > span {
+  display: block;
+  text-align: left;
+}
+.display .home-devices .hd-container .devices-items .page > .page-item:last-child > div > span:nth-child(2) {
+  font-size: 12px;
+}
+.display .home-devices .hd-container .devices-items .page > .page-item:last-child > div > span::before {
+  line-height: 45px;
+  color: #ff6700;
+}
 .display .home-devices .hd-container .devices-items .page > .page-item > a {
   line-height: 300px;
   height: inherit;
@@ -593,8 +615,12 @@ body {
 .display .home-devices .category {
   float: right;
   display: flex;
-  line-height: 60px;
+  align-content: end;
   flex: 1;
+  padding-top: 20px;
+}
+.display .home-devices .category > span:first-child {
+  color: #ff6700;
 }
 .display .home-devices .category:hover > span {
   color: #000;
@@ -603,14 +629,15 @@ body {
 .display .home-devices .category > span {
   color: #000;
   transition: 0s, 9999s;
-  padding-left: 10px;
-  padding-right: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
   font-size: 16px;
 }
 .display .home-devices .category > span:hover {
   color: #ff6700;
   transition: none;
   cursor: pointer;
+  border-bottom: 2px solid #ff6700;
 }
 .display .home-devices .category:has(span:nth-child(1):hover) ~ .hd-container > .devices-items > .page:nth-child(1) {
   visibility: visible;
