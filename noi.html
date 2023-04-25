@@ -132,16 +132,16 @@
 
 <script id="ch0103/17">
   var x1 = + prompt(x1)
-  var X2 = + prompt(X2)
-  var X3 = + prompt(X3)
   var y1 = + prompt(y1)
+  var x2 = + prompt(X2)
   var y2 = + prompt(y2)
+  var x3 = + prompt(X3)
   var y3 = + prompt(y3)
-  L1 = Math.sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2)
-  L2 = Math.sqrt((x2 - x3) ** 2 + (y2 - y3) ** 2)
-  L3 = Math.sqrt((x1 - x3) ** 2 + (y1 - y3) ** 2)
-  P = (L1 + L2 + L3) / 2
-  S = Math.sqrt(p * (P - L1) * (P - L2) * (P - L3))
+  var L1 = Math.sqrt(((x1 - x2) ** 2) + ((y1 - y2) ** 2))
+  var L2 = Math.sqrt(((x2 - x3) ** 2) + ((y2 - y3) ** 2))
+  var L3 = Math.sqrt(((x1 - x3) ** 2) + ((y1 - y3) ** 2))
+  var P = (L1 + L2 + L3) / 2
+  var S = Math.sqrt(P * (P - L1) * (P - L2) * (P - L3))
   console.log(S.toFixed(2))
 </script>
 
