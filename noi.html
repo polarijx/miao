@@ -229,3 +229,79 @@
   var b = + prompt(b)
   console.log((a < 60 && b >=60) || (a >=60 && b < 60) ? 1 : 0)
 </script>
+
+
+<script id="ch0104/11">
+  var d = + prompt(d)
+  console.log(d % 2 === 0 ? "YES" : "NO")
+</script>
+
+
+<script id="ch0104/12">
+  var l = + prompt(l)
+  var t1 = l / 1.2
+  var t2 = l / 3 + 50
+  console.log(t1 > t2 ? "Bike" : t1 < t2 ? "Walk" : "all")
+</script>
+
+
+<script id="ch0104/13">
+  var x = + prompt("0 <= N < 20")
+  var y = x >= 10 && x < 20 ? (x / 2 - 1.5) : (x >= 5 && x < 10 ? (2 - 1.5 * (x - 3) * (x - 3)) : (- x + 2.5))
+  console.log(y.toFixed(3))
+</script>
+
+
+<script id="ch0104/14">
+  var n = + prompt(n)
+  var a = prompt(a)
+  console.log(p)
+  var p = a === "y" && a <= 1000 ? 13 : (a === "y" && a > 1000 ? (13 + Math.ceil((n - 1000) / 500)) : (a === "n" && a <= 1000 ? 8 : (8 + Math.ceil((n - 1000) / 500))))
+</script>
+
+
+<script id="ch0104/15">
+  var a = + prompt(a)
+  var b = + prompt(b)
+  var c = + prompt(c)
+  console.log(a >= b && a >= c ? a : (a >= b && a < c ? c : (a < b && a >= c ? b : (a < b && a < c && b <= c ? c : b))))
+</script>
+
+
+<script id="ch0104/16">
+  var a = + prompt(a)
+  var b = + prompt(b)
+  var c = + prompt(c)
+  console.log(a + b <= c || a + c <= b || b + c <= a ? "no" : "yes")
+</script>
+
+
+<script id="ch0104/17">
+  var a = + prompt("0 < a < 3000")
+  console.log((a % 4 === 0 && a % 100 !== 0) || a % 400 === 0 ? "Y" : "N")
+</script>
+
+
+<script id="ch0104/18">
+  var x = + prompt(x)
+  var y = + prompt(y)
+  console.log(x <=1 && x >= -1 && y <= 1 && y >= -1 ? "yes" : "no")
+</script>
+
+
+<script id="ch0104/19">
+  var a = + prompt(a)
+  var b = + prompt(b)
+  var c =  prompt(c)
+  var x = c === "+" ? (a + b) : (c === "-" ? (a - b) : (c === "*" ? (a * b) : (c === "/" ? (a / b) : (b === 0 ? "Divided by zero!" : "Invalid operator!"))))
+  console.log(x)
+</script>
+
+
+<script id="ch0104/20">
+  var n = + prompt(n)
+  var x = + prompt(x)
+  var y = + prompt(y)
+  var l = n - (Math.ceil(y / x))
+  console.log(l)
+</script>
