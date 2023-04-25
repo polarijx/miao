@@ -256,7 +256,7 @@
   var n = + prompt(n)
   var a = prompt(a)
   console.log(p)
-  var p = a === "y" && a <= 1000 ? 13 : (a === "y" && a > 1000 ? (13 + Math.ceil((n - 1000) / 500 * 4)) : (a === "n" && a <= 1000 ? 8 : (8 + Math.ceil((n - 1000) / 500 * 4))))
+  var p = a === "y" && a <= 1000 ? 13 : (a === "y" && a > 1000 ? (13 + Math.ceil((n - 1000) / 500) * 4) : (a === "n" && a <= 1000 ? 8 : (8 + Math.ceil((n - 1000) / 500) * 4)))
   console.log(p)
 </script>
 
@@ -300,6 +300,21 @@
 
 
 <script id="ch0104/20">
+  var a = + prompt(a)
+  var b = + prompt(b)
+  var c = + prompt(c)
+  var p = b * b - 4 * a * c
+  var m = (Math.sqrt(m) - b) / a / 2
+  var n = ((-1) * Math.sqrt(m) - b) / a / 2
+  var j = b / a / (-2)
+  var k = Math.sqrt((-1) * m) / a / 2
+
+  console.log(p === 0 ? ("x1=x2=" + j) : (p > 0 && a > 0 ? ("x1=" + m + ";" + "x2=" + n) : (p > 0 && a < 0 ? ("x1=" + n + ";" + "x2=" + m) : (a > 0 ? ("x1=" + j + k + "i" + ";x2=" + j + (-1) * k + "i") : ("x1=" + j + (-1) * k + "i" + ";x2=" + j + k + "i")))))
+
+</script>
+
+
+<script id="ch0104/21">
   var n = + prompt(n)
   var x = + prompt(x)
   var y = + prompt(y)
