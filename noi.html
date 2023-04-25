@@ -17,7 +17,7 @@
   var a = + prompt("-10000 < a < 10000")
   var b = + prompt("-10000 < b < 10000")
   var c = + prompt("-10000 < c < 10000, c不等于0")
-  console.log((a + b) / c)
+  console.log(Math.trunc((a + b) / c))
 </script>
 
 
@@ -126,7 +126,7 @@
   var Ya = + prompt(Ya)
   var Xb = + prompt(Xb)
   var Yb = + prompt(Yb)
-  L = Math.sqrt((Xb - Xa) ** 2 + (Yb - Ya) ** 2)
+  var L = Math.sqrt((Xb - Xa) ** 2 + (Yb - Ya) ** 2)
   console.log(L.toFixed(3))
 </script>
 
