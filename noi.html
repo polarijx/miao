@@ -256,7 +256,7 @@
   var n = + prompt(n)
   var a = prompt(a)
   console.log(p)
-  var p = a === "y" && a <= 1000 ? 13 : (a === "y" && a > 1000 ? (13 + Math.ceil((n - 1000) / 500)) : (a === "n" && a <= 1000 ? 8 : (8 + Math.ceil((n - 1000) / 500))))
+  var p = a === "y" && a <= 1000 ? 13 : (a === "y" && a > 1000 ? (13 + Math.ceil((n - 1000) / 500 * 4)) : (a === "n" && a <= 1000 ? 8 : (8 + Math.ceil((n - 1000) / 500 * 4))))
 </script>
 
 
