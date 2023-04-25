@@ -303,12 +303,11 @@
   var b = + prompt(b)
   var c = + prompt(c)
   var p = b * b - 4 * a * c
-  var m = (Math.sqrt(m) - b) / a / 2
-  var n = ((-1) * Math.sqrt(m) - b) / a / 2
-  var j = b / a / (-2)
-  var k = Math.sqrt((-1) * m) / a / 2
-
-  console.log(p === 0 ? ("x1=x2=" + j) : (p > 0 && a > 0 ? ("x1=" + m + ";" + "x2=" + n) : (p > 0 && a < 0 ? ("x1=" + n + ";" + "x2=" + m) : (a > 0 ? ("x1=" + j + k + "i" + ";x2=" + j + (-1) * k + "i") : ("x1=" + j + (-1) * k + "i" + ";x2=" + j + k + "i")))))
+  var m = (Math.sqrt(p) - b) / a / 2
+  var n = ((-1) * Math.sqrt(p) - b) / a / 2
+  var j = (-1) * b / a / 2
+  var k = Math.sqrt((-1) * p) / a / 2
+  console.log(p === 0 ? ("x1=x2=" + j) : (p > 0 && a > 0 ? ("x1=" + m + ";" + "x2=" + n) : (p > 0 && a < 0 ? ("x1=" + n + ";" + "x2=" + m) : (p < 0 && a > 0 ? ("x1=" + j + "+" + k + "i" + ";x2=" + j + (-1) * k + "i") : ("x1=" + j + (-1) * k + "i" + ";x2=" + j + "+" + k + "i")))))
 
 </script>
 
