@@ -181,5 +181,51 @@
 
 <script id="ch0104/03">
   var n = + prompt("n > 0 且为整数")
-  console.log(n % 2 == 0 ? even : odd)
+  console.log(n % 2 === 0 ? even : odd)
+</script>
+
+
+<script id="ch0104/04">
+  var a = prompt(a)
+  var n = a.charCodeAt()
+  console.log(n % 2 === 1 ? "YES" : "NO")
+</script>
+
+
+<script id="ch0104/05">
+  var x = + prompt(x)
+  var y = + prompt(y)
+  console.log(x > y ? ">" : x === y ? "=" :"<")
+</script>
+
+
+<script id="ch0104/06">
+  var n = + prompt("n <= 1000")
+  console.log(n < 100 && n >= 10 ? 1 : 0)
+</script>
+
+
+<script id="ch0104/07">
+  var a = + prompt(a)
+  var b = + prompt(b)
+  console.log(a >= 10 || b >= 20 ? 1 : 0)
+</script>
+
+
+<script id="ch0104/08">
+  var n = + prompt(n)
+  console.log(n % 3 === 0 && n % 5 === 0 ? "YES" : "NO")
+</script>
+
+
+<script id="ch0104/09">
+  var n = + prompt(n)
+  console.log(n % 3 === 0 && n % 5 === 0 && n % 7 === 0 ? "3 5 7" : (n % 3 === 0 && n % 5 === 0 && n % 7 !== 0 ? "3 5" : (n % 3 === 0 && n % 5 !== 0 && n % 7 === 0 ? "3 7" : (n % 3 !== 0 && n % 5 === 0 && n % 7 === 0 ? "5 7" : (n % 3 === 0 && n % 5 !== 0 && n % 7 !== 0 ? 3 : (n % 3 !== 0 && n % 5 === 0 && n % 7 !== 0 ? 5 : (n % 3 !== 0 && n % 5 !== 0 && n % 7 === 0 ? 7 : "n")))))))
+</script>
+
+
+<script id="ch0104/10">
+  var a = + prompt(a)
+  var b = + prompt(b)
+  console.log((a < 60 && b >=60) || (a >=60 && b < 60) ? 1 : 0)
 </script>
