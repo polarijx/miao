@@ -136,9 +136,9 @@
   var y2 = + prompt(y2)
   var x3 = + prompt(X3)
   var y3 = + prompt(y3)
-  var L1 = Math.sqrt(((x1 - x2) ** 2) + ((y1 - y2) ** 2))
-  var L2 = Math.sqrt(((x2 - x3) ** 2) + ((y2 - y3) ** 2))
-  var L3 = Math.sqrt(((x1 - x3) ** 2) + ((y1 - y3) ** 2))
+  var L1 = Math.sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2)
+  var L2 = Math.sqrt((x2 - x3) ** 2 + (y2 - y3) ** 2)
+  var L3 = Math.sqrt((x1 - x3) ** 2 + (y1 - y3) ** 2)
   var P = (L1 + L2 + L3) / 2
   var S = Math.sqrt(P * (P - L1) * (P - L2) * (P - L3))
   console.log(S.toFixed(2))
