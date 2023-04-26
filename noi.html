@@ -598,3 +598,24 @@
   console.log(l.toFixed(4))
   console.log(h.toFixed(7))
 </script>
+
+
+<script id="ch0105/21">
+  var N = + prompt(N)
+  var n = 1
+  var N0 = N
+  for (var r = 1; r <= n; r ++) {
+    if (N % 2 === 1 && N !== 1) {
+      N = N * 3 + 1
+      n ++
+      console.log(N0 + "*3+1=" + N )
+      N0 = N
+    }
+    else if (N % 2 === 0 && N !== 1) {
+      N = N / 2
+      n ++
+      console.log(N0 + "/2=" + N )
+      N0 = N
+    }
+  }
+</script>
