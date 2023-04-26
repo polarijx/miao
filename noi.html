@@ -583,3 +583,18 @@
   }
   console.log(Math.ceil(t))
 </script>
+
+
+<script id="ch0105/20">
+  var h = + prompt(h)
+  var l = h
+  for (var r = 1; r <= 10; r ++) {
+    h = 0.5 * h
+    var k = 2 * h + l
+    if (r >= 2) {
+      l = k + 2 * h
+    }
+  }
+  console.log(l.toFixed(4))
+  console.log(h.toFixed(7))
+</script>
