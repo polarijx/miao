@@ -549,4 +549,21 @@
 </script>
 
 
-
+<script id="ch0105/18">
+  var n = + prompt(n)
+  var i0 = + prompt("鸡尾酒疗法总病例数")
+  var c0 = + prompt("鸡尾酒疗法疗效有效病例数")
+  for (var r = 1; r <= (n - 1); r ++) {
+    var i = + prompt("其他疗法总病例数")
+    var c = + prompt("其他疗法疗效有效病例数")
+    if ((c / i - c0 / i0) * 100 > 5) {
+      console.log("better")
+    }
+    else if ((c0 / i0 - c / i) * 100 > 5) {
+      console.log("worse")
+    }
+    else if (Math.sqrt((c0 / i0 - c / i) ** 2) * 100 < 5) {
+      console.log("same")
+    }
+  }
+</script>
