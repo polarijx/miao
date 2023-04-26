@@ -446,3 +446,61 @@
   }
   console.log(s)
 </script>
+
+
+<script id="ch0105/11">
+  var k = + prompt(k)
+  var n1 = 0
+  var n2 = 0
+  var n3 = 0
+  for (var r = 1; r <= k; r ++) {
+    var a = + prompt(a)
+    if (a === 1) {
+      n1 ++
+    }
+    if (a === 5) {
+      n2 ++
+    }
+    if (a === 10) {
+      n3 ++
+    }
+  }
+  console.log(n1)
+  console.log(n2)
+  console.log(n3)
+</script>
+
+
+<script id="ch0105/12">
+  var N = + prompt(N)
+  var m = + prompt(m)
+  var n = 0
+  for (var r = 1; r <= N; r ++) {
+    var a = + prompt(a)
+    if (a === m) {
+      n ++
+    }
+  }
+  console.log(n)
+</script>
+
+
+<script id="ch0105/13">
+  var a = + prompt(a)
+  var n = + prompt(n)
+  var p = 1
+  for (var r = 1; r <= n; r ++) {
+     p = p * a
+  }
+  console.log(p)
+</script>
+
+
+<script id="ch0105/14">
+  var x = + prompt(x)
+  var n = + prompt(n)
+  for (var r = 1; r <=n; r ++) {
+    x = x + 0.001 * x
+  }
+  console.log(x.toFixed(4))
+</script>
