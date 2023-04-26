@@ -377,8 +377,8 @@
 
 
 <script id="ch0105/06">
-  var n = + prompt(n)
-  var a = + prompt(a)
+  var n = + prompt("1<=n<=1000")
+  var a = + prompt("不超过1000的非负整数")
   var amin = 1000
   for (var r = 1; r <= (n - 1); r ++) {
     var an = + prompt(an)
@@ -390,4 +390,59 @@
     }
   }
   console.log(a - amin)
+</script>
+
+
+<script id="ch0105/07">
+  var n = + prompt("1<=n<=17")
+  var a = 0
+  var b = 0
+  var c = 0
+  for (var r = 1; r <= n; r ++) {
+    a = + prompt("金牌") + a
+    b = + prompt("银牌") + b
+    c = + prompt("铜牌") + c
+  }
+  var d = a + b + c
+  console.log(a)
+  console.log(b)
+  console.log(c)
+  console.log(d)
+</script>
+
+
+<script id="ch0105/08">
+  var n = + prompt("n边形")
+  var d = 0
+  for (var r = 1; r <= (n - 1); r ++) {
+    d = + prompt("内角度数") + d
+  }
+  var d0 = (n - 2) * 180 - d
+  console.log(d0)
+</script>
+
+
+<script id="ch0105/09">
+  var m = + prompt(m)
+  var n = + prompt("m<=n<=300")
+  var s = 0
+  for (var j = m; j <= n; j ++) {
+    if (j % 2 === 1) {
+      s = s + j
+    }
+  }
+  console.log(s)
+</script>
+
+
+<script id="ch0105/10">
+  var m = + prompt("0<m<1000")
+  var n = + prompt("m<=n<=1000")
+  var s = 0
+  for (var j = m; j <= n; j ++) {
+    if (j % 17 === 0) {
+      s = s + j
+    }
+  }
+  console.log(s)
 </script>
