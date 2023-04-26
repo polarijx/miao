@@ -241,7 +241,7 @@
   var l = + prompt(l)
   var t1 = l / 1.2
   var t2 = l / 3 + 50
-  console.log(t1 > t2 ? "Bike" : t1 < t2 ? "Walk" : "all")
+  console.log(t1 > t2 ? "Bike" : t1 < t2 ? "Walk" : "All")
 </script>
 
 
@@ -339,4 +339,55 @@
     rest = + prompt("rest") + rest
   }
   console.log("$" + (rest / row).toFixed(2))
+</script>
+
+
+<script id="ch0105/03">
+  var n = + prompt(n)
+  var s = 0
+  for (var r = 1; r <= n; r ++) {
+    s = + prompt(s) + s
+  }
+  console.log((s / n).toFixed(4))
+</script>
+
+
+<script id="ch0105/04">
+  var n = + prompt(n)
+  var s = 0
+  for (var r = 1; r <= n; r ++) {
+    s = + prompt(s) + s
+  }
+  console.log(s)
+  console.log((s / n).toFixed(5))
+</script>
+
+
+<script id="ch0105/05">
+  var n = + prompt(n)
+  var c = + prompt(c)
+  for (var r = 1; r <= (n - 1); r ++) {
+    var c1 = + prompt(c1)
+    if (c1 >= c) {
+      c = c1
+    }
+  }
+  console.log(c)
+</script>
+
+
+<script id="ch0105/06">
+  var n = + prompt(n)
+  var a = + prompt(a)
+  var amin = 1000
+  for (var r = 1; r <= (n - 1); r ++) {
+    var an = + prompt(an)
+    if (an > a) {
+      a = an
+    }
+    else if (an <= amin) {
+      amin = an
+    }
+  }
+  console.log(a - amin)
 </script>
