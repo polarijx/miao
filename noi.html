@@ -537,10 +537,16 @@
 </script>
 
 
-<!-- <script id="ch0105/17">
+<script id="ch0105/17">
   var k = + prompt(k)
-  var a = 1
-  for (var r = 1; r <= k; r ++) {
-    a = a +
+  var a1 = 1
+  var ak = 1
+  for (var r = 1; r <= (k - 2); r ++) {
+    ak = a1 + ak
+    a1 = ak - a1
   }
-</script> -->
+  console.log(ak)
+</script>
+
+
+
