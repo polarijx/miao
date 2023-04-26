@@ -567,3 +567,19 @@
     }
   }
 </script>
+
+
+<script id="ch0105/19">
+  var n = + prompt(n)
+  for (var r = 1; r <= n; r ++) {
+    var x = + prompt(x)
+    var y = + prompt(y)
+    var p = + prompt(p)
+    var l = Math.sqrt(x * x + y * y)
+    var t = 2 * l / 50 + 1.5 * p
+    if (r >= 2) {
+      t = t + t
+    }
+  }
+  console.log(Math.ceil(t))
+</script>
