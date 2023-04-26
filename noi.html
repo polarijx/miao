@@ -504,3 +504,43 @@
   }
   console.log(x.toFixed(4))
 </script>
+
+
+<script id="ch0105/15">
+  var R = + prompt(R)
+  var M = + prompt(M)
+  var Y = + prompt(Y)
+  for (var r = 1; r <= Y; r ++) {
+    M = M + M * R / 100
+  }
+  console.log(Math.trunc(M))
+</script>
+
+
+<script id="ch0105/16">
+  var N = prompt(N)
+  var K = prompt(K)
+  var Y = 1
+  var P = 200
+  for (var r =1; r <= Y; r ++) {
+    if ( N * Y < P) {
+      Y ++
+    }
+    P = P + P * K / 100
+  }
+  if (Y <= 20) {
+      console.log(Y)
+    }
+  else {
+      console.log("Impossible")
+  }
+</script>
+
+
+<!-- <script id="ch0105/17">
+  var k = + prompt(k)
+  var a = 1
+  for (var r = 1; r <= k; r ++) {
+    a = a +
+  }
+</script> -->
