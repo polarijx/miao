@@ -771,3 +771,28 @@
     }
   }
 </script>
+
+
+<script id="ch0105/29">
+  var N = + prompt(N)
+  var j = 0
+  var n = ""
+  for (var i = 0; i <=j; i ++) {
+    var a = Math.trunc(N / (10 ** j)) % 10
+    if (a === 0) {
+      n = n
+    }
+    else {
+      n = n + a
+      N = Math.sqrt(N * N)
+    }
+    var x = N / (10 ** (j + 1))
+    if (Math.sqrt(x ** 2) >= 1) {
+      j ++
+    }
+    else {
+      break
+    }
+  }
+  console.log(n)
+</script>
