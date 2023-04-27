@@ -822,3 +822,24 @@
     console.log("NO")
   }
 </script>
+
+
+<script id="ch0105/31">
+  var N = + prompt("N盏灯")
+  var M = + prompt("M个人")
+  var n = 0
+  for ( var i = 1; i <= N; i ++) {
+    var t = true
+    for (var r = 1; r <= M; r ++) {
+      if (i % r === 0) {
+        t = !t
+      }
+    }
+
+    n++
+
+    if (t === false) {
+      console.log(n)
+    }
+  }
+</script>
