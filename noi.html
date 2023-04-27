@@ -622,7 +622,7 @@
 </script>
 
 
-<!-- <script id="ch0105/22">
+<script id="ch0105/22">
   var m = 300
   var n = 0
   for (var j = 1; j <= 12; j ++) {
@@ -630,12 +630,14 @@
     if (m - c >= 0) {
       var r = m - Math.floor((m - c) / 100) * 100 - c
       n = n + Math.floor((m - c) / 100)
-      m = r + m - c
+      m = r + 300
     }
-    if (m < c) {
-      console.log(m - c)
+    else {
+      console.log((-1) * j)
       break
     }
   }
-  console.log((n + n * 0.2) * 100)
-</script> -->
+  if ((m - c) >= 0) {
+    console.log((n + n * 0.2) * 100 + r)
+  }
+</script>
