@@ -658,3 +658,20 @@
   }
   console.log(p)
 </script>
+
+
+<script id="ch0105/24">
+  var n = + prompt("正整数n，n<100")
+  var j = 0
+  for (var r = 1; r <= n; r ++) {
+    var p0 = + prompt("收缩压")
+    var p1 = + prompt("舒张压")
+    if (p0 >= 90 && p0 <= 140 && p1 >=60 && p1 <= 90) {
+      j ++
+    }
+    else {
+      j = 0
+    }
+  }
+  console.log(j)
+</script>
