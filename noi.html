@@ -326,7 +326,8 @@
   var n = + prompt(n)
   var x = 0
   for (var r = 1; r <= n; r ++) {
-    x = + prompt(x) + x
+    var a = + prompt(a)
+    x = a + x
   }
   console.log((x / n).toFixed(2))
 </script>
@@ -336,7 +337,8 @@
   var row = 12
   var rest = 0
   for (var r = 1; r <= row; r ++) {
-    rest = + prompt("rest") + rest
+    var i = + prompt("rest")
+    rest = i + rest
   }
   console.log("$" + (rest / row).toFixed(2))
 </script>
@@ -399,9 +401,12 @@
   var b = 0
   var c = 0
   for (var r = 1; r <= n; r ++) {
-    a = + prompt("金牌") + a
-    b = + prompt("银牌") + b
-    c = + prompt("铜牌") + c
+    var i1 = + prompt("金牌")
+    var i2 = + prompt("银牌")
+    var i3 = + prompt("铜牌")
+    a = i1 + a
+    b = i2 + b
+    c = i3 + c
   }
   var d = a + b + c
   console.log(a)
@@ -674,4 +679,47 @@
     }
   }
   console.log(j)
+</script>
+
+
+<script id="ch0105/25">
+  var n = 1
+  var n0 = 1
+  var tem = 0
+  var nto7 = ""
+  var nto9 = ""
+  for (var r = 1; r <= n; r ++) {
+
+    while (n0 !== 0) {
+      tem = n0 % 7
+      n0 = Math.trunc(n0 / 7)
+      nto7 = tem + nto7 + ""
+    }
+
+    var nto7reverse = ""
+
+    for (var i = nto7.length - 1; i >= 0; i --) {
+      nto7reverse += nto7[i]
+    }
+
+    n0 = n
+
+    while (n0 !== 0) {
+      tem = n0 % 9
+      n0 = Math.trunc(n0 / 9)
+      nto9 = tem + nto9 + ""
+    }
+
+    if (nto7reverse === nto9 && nto7reverse.length === 3 && nto9.length === 3) {
+      console.log(n)
+      console.log(nto7)
+      console.log(nto9)
+      break
+    }
+    else {
+      n ++
+    }
+
+    n0 = n
+  }
 </script>
