@@ -684,19 +684,17 @@
 
 <script id="ch0105/25">
   var n = 1
-  var n0 = 1
-  var tem = 0
-  var nto7 = ""
-  var nto9 = ""
   for (var r = 1; r <= n; r ++) {
+    var n0 = n
+    var nto7 = ""
+    var nto9 = ""
+    var nto7reverse = ""
 
     while (n0 !== 0) {
       tem = n0 % 7
       n0 = Math.trunc(n0 / 7)
       nto7 = tem + nto7 + ""
     }
-
-    var nto7reverse = ""
 
     for (var i = nto7.length - 1; i >= 0; i --) {
       nto7reverse += nto7[i]
@@ -719,11 +717,6 @@
     else {
       n ++
     }
-
-    n0 = n
-    nto7 = ""
-    nto7reverse = ""
-    nto9 = ""
   }
 </script>
 
