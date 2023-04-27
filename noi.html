@@ -380,8 +380,8 @@
 
 <script id="ch0105/06">
   var n = + prompt("1<=n<=1000")
-  var a = + prompt("不超过1000的非负整数")
-  var amin = 1000
+  var a = + prompt("不超过1000的非负整数") //以第一个输入的数字为初始最大值
+  var amin = 1000 //以输入最大范围为初始最小值， 或Infinite。
   for (var r = 1; r <= (n - 1); r ++) {
     var an = + prompt(an)
     if (an > a) {
@@ -420,7 +420,8 @@
   var n = + prompt("n边形")
   var d = 0
   for (var r = 1; r <= (n - 1); r ++) {
-    d = + prompt("内角度数") + d
+    var c = + prompt("内角度数")
+    d = c + d
   }
   var d0 = (n - 2) * 180 - d
   console.log(d0)
