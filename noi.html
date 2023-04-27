@@ -746,7 +746,17 @@
 </script>
 
 
-<!-- <script id="ch0105/27">
+<script id="ch0105/27">
   var K = + prompt(K)
-
-</script> -->
+  var n = 1
+  var sn = 0
+  for (var i = 1; i <= n; i ++) {
+    var sn = 1 / n + sn
+    if (sn <= K) {
+      n ++
+    }
+    else {
+      console.log(n)
+    }
+  }
+</script>
