@@ -723,3 +723,21 @@
     n0 = n
   }
 </script>
+
+
+<script id="ch0105/26">
+  var n = + prompt("四位数个数")
+  var j = 0
+  for (var i = 1; i <= n; i ++) {
+    var x = + prompt("四位数")
+    var d = x % 10
+    var a = Math.trunc(x / 1000) % 10
+    var b = Math.trunc(x / 100) % 10
+    var c = Math.trunc(x / 10) % 10
+    var r = d - a - b - c
+    if (r > 0) {
+      j ++
+    }
+  }
+  console.log(j)
+</script>
