@@ -751,12 +751,29 @@
   var n = 1
   var sn = 0
   for (var i = 1; i <= n; i ++) {
-    var sn = 1 / n + sn
+    sn = 1 / n + sn
     if (sn <= K) {
       n ++
     }
     else {
       console.log(n)
+    }
+  }
+</script>
+
+
+<script id="ch0105/28">
+  var n = + prompt("1<=n<=100000000")
+  var j = 0
+  for (var i = 0; i <= j; i ++) {
+    var a = Math.trunc(n / (10 ** j)) % 10
+    console.log(a)
+    var x = n / (10 ** (j + 1))
+    if (x >= 1) {
+      j ++
+    }
+    else {
+      break
     }
   }
 </script>
