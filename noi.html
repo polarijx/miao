@@ -883,3 +883,21 @@
   }
   console.log(s.toFixed(4))
 </script>
+
+
+<script id="ch0105/34">
+  var n = + prompt("1<n<12")
+  var s = 1
+  var sum = 0
+  for (var i = 1; i <= n; i ++) {
+    if (i === 1) {
+      var a = 1
+    }
+    else {
+      var a = i
+    }
+    s = s * a
+    sum = sum + s
+  }
+  console.log(sum)
+</script>
