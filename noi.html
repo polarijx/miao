@@ -796,3 +796,29 @@
   }
   console.log(n)
 </script>
+
+
+<script id="ch0105/30">
+  var m = + prompt("1<m<100000")
+  var k = + prompt("1<k<5")
+  var j = 0
+  var n = 1
+  for (var i = 0; i < n; i ++) {
+    if (("" + m)[i] === "3") {
+      j ++
+    }
+    if (m / (10 ** (n - 1)) < 1) {
+      break
+    }
+    else {
+      n ++
+    }
+  }
+
+  if (j === k && m % 19 === 0) {
+    console.log("YES")
+  }
+  else {
+    console.log("NO")
+  }
+</script>
