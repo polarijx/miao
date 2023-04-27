@@ -641,3 +641,20 @@
     console.log((n + n * 0.2) * 100 + r)
   }
 </script>
+
+
+<script id="ch0105/23">
+  var m = + prompt("药品总量m")
+  var n = + prompt("取药的人数n")
+  var p = 0 //没取上药品的人数
+  for (var r = 1; r <= n; r ++) {
+    var x = + prompt("每个病人取药数量")
+    if (m < x) {
+      p ++
+    }
+    else {
+      m = m - x
+    }
+  }
+  console.log(p)
+</script>
