@@ -828,6 +828,7 @@
   var N = + prompt("N盏灯")
   var M = + prompt("M个人")
   var n = 0
+  var res0 = ""
   for ( var i = 1; i <= N; i ++) {
     var t = true
     for (var r = 1; r <= M; r ++) {
@@ -839,7 +840,10 @@
     n++
 
     if (t === false) {
-      console.log(n)
+      res0 = res0 + n + ","
     }
   }
+  var res = res0.substring(0, res0.length - 1)
+  console.log(res)
 </script>
+
