@@ -683,7 +683,7 @@
 </script>
 
 
-<script id="ch0105/25">
+<script id="ch0105/25"> //需要修改
   var n = 1
   for (var r = 1; r <= n; r ++) {
     var n0 = n
@@ -756,20 +756,13 @@
 </script>
 
 
-<script id="ch0105/28">
+<script id="ch0105/28"> //需要修改
   var n = + prompt("1<=n<=100000000")
-  var j = 0
-  for (var i = 0; i <= j; i ++) {
-    var a = Math.trunc(n / (10 ** j)) % 10
+  do {
+    var a = n % 10
+    n = (n - a) / 10
     console.log(a)
-    var x = n / (10 ** (j + 1))
-    if (x >= 1) {
-      j ++
-    }
-    else {
-      break
-    }
-  }
+  } while (n > 0)
 </script>
 
 
@@ -918,4 +911,16 @@
     sum = sum + a
   }
   console.log(sum.toFixed(2))
+</script>
+
+
+<script id="ch0105/37">
+  var M = + prompt("体力最大值")
+  var N = + prompt("战斗力")
+  var X = + prompt("能量元素")
+  for (var i = 0; i <= X;) {
+    i += Math.ceil(M / N)
+    N += Math.trunc(M / N) // 第一个战斗期上升的战斗力
+  }
+  console.log(N)
 </script>
