@@ -1,5 +1,5 @@
 //Mymap
-class Mymap {
+class MyMap {
   #keys = []
   #vals = []
   constructor() {
@@ -203,7 +203,7 @@ class LinkedList {
       return
     }
     else {
-      thisl.tail.next = node
+      this.tail.next = node
       this.tail = node
       return
     }
