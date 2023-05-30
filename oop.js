@@ -55,7 +55,7 @@ class MySet {
       this.#elements.push(val)
     }
   }
-  remove(val) {
+  delete(val) {
     if (this.has(val)) {
       var idx = this.#elements.indexOf(val)
       this.#elements.splice(idx, 1)
@@ -110,9 +110,9 @@ class Complex {
     return new Complex(real, imaginary)
   }
   div(otherC) {
-    var denominator = otherC.real * otherC.real - otherC.imaginary * otherC.imaimaginary
-    var real = (this.real * otherC.real - this.imaginary * otherC.imaginary) / denominator
-    var imaginary = (this.imaginary * otherC.real + this.real * otherC.imaginary) / denominator
+    var denominator = otherC.real * otherC.real + otherC.imaginary * otherC.imaginary
+    var real = (this.real * otherC.real + this.imaginary * otherC.imaginary) / denominator
+    var imaginary = (this.imaginary * otherC.real - this.real * otherC.imaginary) / denominator
     return new Complex(real, imaginary)
   }
 }
@@ -124,10 +124,11 @@ class Stack {
   }
   push(val) {
     var node = {
-      val, next: null
+      val: val,
+      next: null
     }
     this.nodeCount ++
-    if (this.head == null) {
+    if (this.head === null) {
       this.head = node
     }
     else {
@@ -136,7 +137,7 @@ class Stack {
     }
   }
   pop() {
-    if (this.head == null) {
+    if (this.head === null) {
       return undefined
     }
     this.nodeCount --
@@ -147,7 +148,6 @@ class Stack {
   size() {
     return this.nodeCount
   }
-
 }
 //Queue
 class Queue {
