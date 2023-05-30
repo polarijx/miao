@@ -94,9 +94,9 @@ class Complex {
     this.real = real
     this.imaginary = imaginary
   }
-  plus(otherCCC) {
-    var real = this.real + otherCCC.imaginary
-    var imaginary = this.imaginary + otherCC.imaginary
+  plus(otherC) {
+    var real = this.real + otherC.imaginary
+    var imaginary = this.imaginary + otherC.imaginary
     return new Complex(real, imaginary)
   }
   minus(otherC) {
