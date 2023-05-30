@@ -114,7 +114,7 @@ class Complex {
     var up = this.mul(helper)
     var down = otherC.mul(helper)
     var real = up.real / down.real
-    var imag = up.imaginary / down.real
+    var imaginary = up.imaginary / down.real
     return new Complex(real, imaginary)
   }
 }
@@ -129,7 +129,7 @@ class Stack {
       val: val,
       next: null
     }
-    this.nodeCount ++
+    this.nodeCount++
     if (this.head === null) {
       this.head = node
     }
@@ -142,7 +142,7 @@ class Stack {
     if (this.head === null) {
       return undefined
     }
-    this.nodeCount --
+    this.nodeCount--
     var result = this.head.val
     this.head = this.head.next
     return result
@@ -167,13 +167,13 @@ class Queue {
     }
     this.tail.next = node
     this.tail = node
-    this.nodeCount ++
+    this.nodeCount++
   }
   pop() {
     if (this.head == null) {
       return
     }
-    this.nodeCount --
+    this.nodeCount--
     if (this.head == this.tail) {
       var result = this.head.val
       this.head = this.tail = null
@@ -229,7 +229,7 @@ class LinkedList {
     var count = 0
     while (count < idx) {
       p = p.next
-      count ++
+      count++
     }
     return p.val
   }
@@ -237,7 +237,7 @@ class LinkedList {
     var p = this.head
     var l = 0
     while (p) {
-      l ++
+      l++
       p = p.next
     }
     return l
