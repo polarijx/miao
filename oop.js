@@ -110,9 +110,11 @@ class Complex {
     return new Complex(real, imaginary)
   }
   div(otherC) {
-    var denominator = otherC.real * otherC.real + otherC.imaginary * otherC.imaginary
-    var real = (this.real * otherC.real + this.imaginary * otherC.imaginary) / denominator
-    var imaginary = (this.imaginary * otherC.real - this.real * otherC.imaginary) / denominator
+    var helper = new Complex(otherC.real, -otherC.imaginary)
+    var up = this.mul(helper)
+    var down = otherC.mul(helper)
+    var real = up.real / down.real
+    var imag = up.imaginary / down.real
     return new Complex(real, imaginary)
   }
 }
