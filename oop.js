@@ -110,6 +110,9 @@ class Complex {
     return new Complex(real, imaginary)
   }
   div(otherC) {
+    if (otherC.imaginary === 0 && otherC.real === 0) {
+      return this
+    }
     var helper = new Complex(otherC.real, -otherC.imaginary)
     var up = this.mul(helper)
     var down = otherC.mul(helper)
