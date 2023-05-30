@@ -147,7 +147,7 @@ class Stack {
     this.head = this.head.next
     return result
   }
-  size() {
+  get size() {
     return this.nodeCount
   }
 }
@@ -183,7 +183,7 @@ class Queue {
     this.head = this.head.next
     return result
   }
-  size() {
+  get size() {
     return this.nodeCount
   }
 }
@@ -233,7 +233,7 @@ class LinkedList {
     }
     return p.val
   }
-  seze() {
+  get size() {
     var p = this.head
     var l = 0
     while (p) {
