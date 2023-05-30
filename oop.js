@@ -111,14 +111,13 @@ class Complex {
   }
   div(otherC) {
     if (otherC.imaginary === 0 && otherC.real === 0) {
-      return this
+      return new Complex(Infinity, Infinity);
     }
-    var helper = new Complex(otherC.real, -otherC.imaginary)
-    var up = this.mul(helper)
-    var down = otherC.mul(helper)
-    var real = up.real / down.real
-    var imaginary = up.imaginary / down.real
-    return new Complex(real, imaginary)
+    var denominator = otherC.real * otherC.real + otherC.imaginary * otherC.imaginary;
+    var real = (this.real * otherC.real + this.imaginary * otherC.imaginary) / denominator;
+    var imaginary = (this.imaginary * otherC.real - this.real * otherC.imaginary) / denominator;
+    return new Complex(real, imaginary);
+  }
   }
 }
 //Stack
