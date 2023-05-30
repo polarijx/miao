@@ -74,14 +74,14 @@ class Vector {
     this.x = x
     this.y = y
   }
-  plus(Vector) {
-    var x = this.x + Vector.x
-    var y = this.y + Vector.y
+  plus(v) {
+    var x = this.x + v.x
+    var y = this.y + v.y
     return new Vector(x, y)
   }
-  minus(Vector) {
-    var x = this.x - Vector.x
-    var y = this.y - Vector.y
+  minus(v) {
+    var x = this.x - v.x
+    var y = this.y - v.y
     return new Vector(x, y)
   }
   get length () {
