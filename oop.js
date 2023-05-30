@@ -106,7 +106,7 @@ class Complex {
   }
   mul(otherC) {
     var real = this.real * otherC.real - this.imaginary * otherC.imaginary
-    var imaginary = this.real * otherC.real + this.imaginary * otherC.imaginary
+    var imaginary = this.real * otherC.imaginary + this.imaginary * otherC.real
     return new Complex(real, imaginary)
   }
   div(otherC) {
