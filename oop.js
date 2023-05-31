@@ -90,33 +90,33 @@ class Vector {
 }
 //Complex实现四个静态方法以计算加减乘除
 class Complex {
-  constructor(real, imaginary) {
+  constructor(real, imag) {
     this.real = real
-    this.imaginary = imaginary
+    this.imag = imag
   }
   plus(otherC) {
-    var real = this.real + otherC.imaginary
-    var imaginary = this.imaginary + otherC.imaginary
-    return new Complex(real, imaginary)
+    var real = this.real + otherC.imag
+    var imag = this.imag + otherC.imag
+    return new Complex(real, imag)
   }
   minus(otherC) {
     var real = this.real - otherC.real
-    var imaginary = this.imaginary - otherC.imaginary
-    return new Complex(real, imaginary)
+    var imag = this.imag - otherC.imag
+    return new Complex(real, imag)
   }
   mul(otherC) {
-    var real = this.real * otherC.real - this.imaginary * otherC.imaginary
-    var imaginary = this.real * otherC.imaginary + this.imaginary * otherC.real
-    return new Complex(real, imaginary)
+    var real = this.real * otherC.real - this.imag * otherC.imag
+    var imag = this.real * otherC.imag + this.imag * otherC.real
+    return new Complex(real, imag)
   }
   div(otherC) {
-    if (otherC.imaginary === 0 && otherC.real === 0) {
+    if (otherC.imag === 0 && otherC.real === 0) {
       return new Complex(Infinity, Infinity);
     }
-    var denominator = otherC.real * otherC.real + otherC.imaginary * otherC.imaginary;
-    var real = (this.real * otherC.real + this.imaginary * otherC.imaginary) / denominator;
-    var imaginary = (this.imaginary * otherC.real - this.real * otherC.imaginary) / denominator;
-    return new Complex(real, imaginary);
+    var denominator = otherC.real * otherC.real + otherC.imag * otherC.imag;
+    var real = (this.real * otherC.real + this.imag * otherC.imag) / denominator;
+    var imag = (this.imag * otherC.real - this.real * otherC.imag) / denominator;
+    return new Complex(real, imag);
 
   }
 }
