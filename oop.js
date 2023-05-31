@@ -117,7 +117,7 @@ class Complex {
     var real = (this.real * otherC.real + this.imaginary * otherC.imaginary) / denominator;
     var imaginary = (this.imaginary * otherC.real - this.real * otherC.imaginary) / denominator;
     return new Complex(real, imaginary);
-  }
+
   }
 }
 //Stack
