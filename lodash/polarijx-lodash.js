@@ -17,8 +17,16 @@ var polarijx = function () {
     return result
   }
 
+  function fill(array, value, [start = 0], [end = array.length]) {
+    for (var i = 0; i <array.length; i ++) {
+      array[i] = value
+    }
+    return array
+  }
+
   return {
     chunk: chunk,
     compact: compact,
+    fill: fill,
   }
 }
