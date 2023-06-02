@@ -1,13 +1,13 @@
-var polarijx = function () {
-  function chunk(ary, size) {
+var polarijx = {
+  chunk: function (ary, size) {
     var result = []
-    for (var i = 0; i <ary.length; i += size) {
+    for (var i = 0; i < ary.length; i += size) {
       result.push(ary.slice(i, i + size))
     }
     return result
-  }
+  },
 
-  function compact(array) {
+  compact: function (array) {
     var result = []
     for (var items of array) {
       if (items) {
@@ -15,18 +15,12 @@ var polarijx = function () {
       }
     }
     return result
-  }
+  },
 
-  function fill(array, value, [start = 0], [end = array.length]) {
+  fill: function (array, value, [start = 0], [end = array.length]) {
     for (var i = start; i < end; i ++) {
       array[i] = value
     }
     return array
-  }
-
-  return {
-    chunk: chunk,
-    compact: compact,
-    fill: fill,
   }
 }
