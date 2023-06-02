@@ -22,5 +22,5 @@ var polarijx = {
       array[i] = value
     }
     return array
-  }
+  },
 }
