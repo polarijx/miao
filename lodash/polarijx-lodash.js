@@ -109,7 +109,9 @@ var polarijx = {
   flatten: function (array) {
     return array.reduce((result, item) => {
       if (Array.isArray(item)) {
-        return result.concat(item.flat())
+        for (var items of item) {
+          return result.concat(items)
+        }
       }
       else {
         return result.concat(item)
@@ -130,7 +132,7 @@ var polarijx = {
 
   flattenDepth: function (array, depth = 1) {
     if (depth === 0) {
-      return array
+      return array.slice()
     }
     return array.reduce((result, item) => {
       if (Array.isArray(item)) {
@@ -140,4 +142,4 @@ var polarijx = {
     }, [])
   }
 }
-2
+
