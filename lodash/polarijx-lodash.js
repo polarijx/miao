@@ -107,32 +107,39 @@ var polarijx = {
   },
 
   flatten: function (array) {
-    return array.reduce((result, item) => {
+    var result = []
+    for (var item of array) {
       if (Array.isArray(item)) {
-        for (var items of item) {
-          return result.concat(items)
+        for (var val of item) {
+          result.push(val)
         }
       }
       else {
-        return result.concat(item)
+        result.push(item)
       }
-    },[])
+    }
+    return result
   },
 
   flattenDeep: function (array) {
-    return array.reduce((result, item) => {
+    var result = []
+    for (var item of array) {
       if (Array.isArray(item)) {
-        return result.concat(this.flattenDeep(item))
+        var flattedItem = this.flattenDeep(item)
+        for (var val of flattedItem) {
+          result.push(val)
+        }
       }
       else {
-        return result.concat(item)
+        result.push(item)
       }
-    })
+    }
+    return result
   },
 
   flattenDepth: function (array, depth = 1) {
     if (depth === 0) {
-      return array.slice()
+      return array
     }
     return array.reduce((result, item) => {
       if (Array.isArray(item)) {
@@ -142,4 +149,3 @@ var polarijx = {
     }, [])
   }
 }
-
