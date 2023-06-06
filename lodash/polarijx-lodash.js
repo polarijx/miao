@@ -66,7 +66,7 @@ var polarijx = {
     return -1
   },
 
-  fromIndex: function (array, predicate, fromIndex = 0) {
+  findIndex: function (array, predicate, fromIndex = 0) {
     if (
       typeof predicate !== 'function' && typeof predicate !== 'object' && typeof predicate !== 'string' && !Array.isArray(predicate)
     ) {
