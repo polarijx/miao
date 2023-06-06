@@ -62,10 +62,8 @@ var polarijx = {
           return i
         }
       }
-      else {
-        return -1
-      }
     }
+    return -1
   },
 
   fromIndex: function (array, predicate, fromIndex = 0) {
