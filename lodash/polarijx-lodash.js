@@ -141,7 +141,7 @@ var polarijx = {
     }
     return array.reduce((result, item) => {
       if (Array.isArray(item)) {
-        return result.concat(flattenDepth(item, depth - 1))
+        return result.concat(this.flattenDepth(item, depth - 1))
       }
       return result.concat(item)
     }, [])
