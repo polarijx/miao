@@ -58,7 +58,7 @@ var polarijx = {
         }
       }
       if (typeof predicate === 'string') {
-        if (predicate in array[i]) {
+        if (predicate in array[i] && array[i][predicate]) {
           return i
         }
       }
@@ -96,7 +96,7 @@ var polarijx = {
         }
       }
       if (typeof predicate === 'string') {
-        if (predicate in array[i]) {
+        if (predicate in array[i] && array[i][predicate]) {
           return i
         }
       }
