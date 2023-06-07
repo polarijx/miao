@@ -1,0 +1,108 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mini-regex101</title>
+  <script>
+    function run() {
+      var reSource = reInput.value
+      var flags = getFlags()
+      var re = new RegExp(reSource, flags)
+      var string = stringInput.value
+      var match
+      var html = ''
+      var tem = 0
+
+      while(match = re.exec(string)) {
+        html += string.slice(tem, match.index)
+        html += `<b>${match[0]}</b>`
+        tem = re.lastIndex
+        if (!re.global) {
+          tem = match.index + match[0].length
+          break
+        }
+      }
+      html += string.slice(tem)
+      output.innerHTML = html
+    }
+
+    function getFlags() {
+      var flags = ''
+      if (flagI.checked) {
+        flags += 'i'
+      }
+      if (flagG.checked) {
+        flags += 'g'
+      }
+      if (flagM.checked) {
+        flags += 'm'
+      }
+      if (flagS.checked) {
+        flags += 's'
+      }
+      if (flagU.checked) {
+        flags += 'u'
+      }
+      if (flagY.checked) {
+        flags += 'y'
+      }
+      return flags
+    }
+  </script>
+
+  <style>
+    input, textarea, label, pre {
+    font-family: consolas;
+  }
+    pre > b:nth-child(odd) {
+      background-color: #d5ebff;
+    }
+    pre > b:nth-child(even) {
+      background-color: #9fcfff;
+    }
+    .rsult-wrapper {
+      width: 400px;
+      height: 300px;
+      position: relative;
+      > textarea, > pre {
+        position: absolute;
+        font-size: 24px;
+        padding: 0;
+        margin: 0;
+        border: 2px solid;
+        border-radius: 2px;
+        box-sizing: border-box;
+        background-color: transparent;
+        white-space: pre-wrap;
+        word-break: break-all;
+        width: 100%;
+        height: 100%;
+      }
+      > pre {
+        background-color: pink;
+      }
+    }
+  </style>
+ </head>
+ <body>
+  <div class="regexp">
+    <h3>输入正则表达式</h3>
+    <input type="text" id="reInput" value="foo." oninput="run()"><button onclick="run()">run</button>
+    <br>
+    <label><input onclick="run()" id="flagI" type="checkbox">i</label>
+    <label><input onclick="run()" id="flagG" type="checkbox">g</label>
+    <label><input onclick="run()" id="flagM" type="checkbox">m</label>
+    <label><input onclick="run()" id="flagS" type="checkbox">s</label>
+    <label><input onclick="run()" id="flagU" type="checkbox">u</label>
+    <label><input onclick="run()" id="flagY" type="checkbox">y</label>
+  </div>
+  <div class="rsult-wrapper">
+    <h3>输入字符串</h3>
+    <pre id="output"></pre>
+    <textarea name="" id="stringInput" cols="30" rows="10" oninput="run()">foobarbadfoofObarbazFOofooFooPasfoOfooOFFoo
+    </textarea>
+  </div>
+ </body>
+ </html>
