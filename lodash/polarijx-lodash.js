@@ -32,7 +32,7 @@ var polarijx = {
     if (
       typeof predicate !== 'function' && typeof predicate !== 'object' && typeof predicate !== 'string' && !Array.isArray(predicate)
     ) {
-      throw new Error('Invalid predicate type.');
+      throw new Error('Invalid predicate type.')
     }
     for (var i = fromIndex; i >= 0; i -- ) {
       if (Array.isArray(predicate)) {
@@ -45,16 +45,16 @@ var polarijx = {
         return i
       }
       if(typeof predicate === 'object') {
-        var keys = Object.keys(predicate);
-        var match = true;
+        var keys = Object.keys(predicate)
+        var match = true
         for (var key of keys) {
           if (predicate[key] !== array[i][key]) {
-            match = false;
-            break;
+            match = false
+            break
           }
         }
         if (match) {
-          return i;
+          return i
         }
       }
       if (typeof predicate === 'string') {
@@ -70,7 +70,7 @@ var polarijx = {
     if (
       typeof predicate !== 'function' && typeof predicate !== 'object' && typeof predicate !== 'string' && !Array.isArray(predicate)
     ) {
-      throw new Error('Invalid predicate type.');
+      throw new Error('Invalid predicate type.')
     }
     for (var i = fromIndex; i < array.length; i ++ ) {
       if (Array.isArray(predicate)) {
