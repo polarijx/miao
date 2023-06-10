@@ -9,7 +9,11 @@
     function run() {
       var reSource = reInput.value
       var flags = getFlags()
-      var re = new RegExp(reSource, flags)
+      try {
+        var re = new RegExp(reSource, flags)
+      } catch(e) {
+        reInputError.innerHTML = e
+      }
       var string = stringInput.value
       var match
       var html = ''
@@ -18,7 +22,13 @@
       while(match = re.exec(string)) {
         html += string.slice(tem, match.index)
         html += `<b>${match[0]}</b>`
+        if (match[0] === '') {
+          html += '<em></em>'
+        }
         tem = re.lastIndex
+        if (match[0] === '') {
+          re.lastIndex ++
+        }
         if (!re.global) {
           tem = match.index + match[0].length
           break
@@ -50,6 +60,73 @@
       }
       return flags
     }
+
+    // String.prototype.myMatch = function(regexp) {
+    //   var matches = []
+    //   var match
+    //   var regex = new RegExp(regexp)
+    //   regex.lastIndex = 0
+
+    //   while ((match = regex.exec(this))) {
+    //     matches.push(match[0])
+    //     if (!regex.global) {
+    //       break
+    //     }
+    //   }
+
+    //   return matches.length === 0 ? null : matches
+    // }
+
+    // String.prototype.myMatchAll = function(regexp) {
+    //   var regex = new RegExp(regexp, 'g')
+    //   regex.lastIndex = 0
+    //   var matches = []
+    //   var match
+    //   while (match = regex.exec(this)) {
+    //     matches.push(match)
+    //   }
+    //   return matches.length === 0 ? null : matches
+    // }
+
+    // String.prototype.myReplace = function(pattern, replacement) {
+    //   var regex = new RegExp(pattern)
+    //   regex.lastIndex = 0
+    //   var newString = ''
+    //   var match
+    //   var tem = 0
+    //   while (match = regex.exec(this)) {
+    //     newString += this.slice(tem, match.index)
+    //     if (typeof replacement === 'string') {
+    //       newString += replacement
+    //     }
+    //     else if (typeof replacement === 'function') {
+    //       newString += replacement(...match, match.index, match.input)
+    //     }
+    //     tem = regex.lastIndex
+    //     if (!regex.global) {
+    //       tem = match.index + match[0].length
+    //       break
+    //     }
+    //   }
+    //   newString += this.slice(tem)
+    //   return newString
+    // }
+
+    // String.prototype.myReplaceAll = function(pattern, replacement) {
+
+    // }
+
+
+
+
+
+
+
+
+
+
+
+
   </script>
 
   <style>
@@ -69,7 +146,7 @@
       > textarea, > pre {
         position: absolute;
         font-size: 24px;
-        padding: 0;
+        padding: 10px;
         margin: 0;
         border: 2px solid;
         border-radius: 2px;
@@ -80,19 +157,36 @@
         width: 100%;
         height: 100%;
       }
-      > pre {
-        background-color: pink;
+    }
+
+    pre > em {
+      border-left:3px dotted #597797;
+      margin-left: -1.5px;
+      margin-right: -1.5px;
+      position: relative;
+      z-index: 2;
+      display: inline-block;
+      height: 1em;
+      vertical-align: bottom;
+      &:hover {
+        border-color: #a9c6d3;
+        box-shadow: 0 0 10px grey;
+        filter: blur(.7px);
       }
+    }
+    #reInputError {
+      color: #fe0081;
     }
   </style>
  </head>
  <body>
   <div class="regexp">
     <h3>输入正则表达式</h3>
-    <input type="text" id="reInput" value="foo." oninput="run()"><button onclick="run()">run</button>
+    <input type="text" id="reInput" value="\b" oninput="run()"><button onclick="run()">run</button>
     <br>
+    <p id="reInputError"></p>
     <label><input onclick="run()" id="flagI" type="checkbox">i</label>
-    <label><input onclick="run()" id="flagG" type="checkbox">g</label>
+    <label><input onclick="run()" id="flagG" type="checkbox" checked>g</label>
     <label><input onclick="run()" id="flagM" type="checkbox">m</label>
     <label><input onclick="run()" id="flagS" type="checkbox">s</label>
     <label><input onclick="run()" id="flagU" type="checkbox">u</label>
@@ -101,8 +195,7 @@
   <div class="rsult-wrapper">
     <h3>输入字符串</h3>
     <pre id="output"></pre>
-    <textarea name="" id="stringInput" cols="30" rows="10" oninput="run()">foobarbadfoofObarbazFOofooFooPasfoOfooOFFoo
-    </textarea>
+    <textarea name="" id="stringInput" cols="30" rows="10" oninput="run()">foobarbad foofOba rbazFOofooFooPasfoOfooOFFoo</textarea>
   </div>
  </body>
  </html>
