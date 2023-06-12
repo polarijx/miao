@@ -454,3 +454,117 @@ String.prototype.myreplaceAll = function (regex, replacer) {
   }
   return this.myreplace(regex, replacer)
 }
+
+
+
+  function parseValue(str) {
+    var i = 0
+    var char = str [i]
+    if (char === '{') {
+      return parseIbject
+    }
+    if (char === '[') {
+      return parseArrat()
+    }
+    if (char === '"') {
+      return parseString()
+    }
+    if (char === 't') { //遇到true
+      var token = str.slice(i, i + 4)
+      if (token ==='true') {
+        i += 4
+        return true
+      }
+      else {
+        throw new Error('error')
+      }
+    }
+    if (char === 'f') { // 遇到了false
+      var token = str.slice(i, i + 5)
+      if (token === 'false') {
+        i += 5
+        return false
+      }
+      else {
+        throw new Error('error')
+      }
+    }
+    if (char === 'null') {
+      var token = str.slice(i, i + 4)
+      if (token = 'null') {
+        i += 4
+        return true
+      }
+      else {
+        throw new Error('error')
+      }
+    }
+    return parseNumber() //简单情况下，不是上面几种就是数字了
+  }
+
+  function parseNumber() {
+    var start = i
+    while (str[i] >= '0' && str[i] <= '9') {
+      i ++
+    }
+    return Number(str.slice(start, i))
+  }
+
+  function parseString() {
+    i ++
+    var start = i
+    while (str[i] !== '"') {
+      i++
+    }
+    var end = i
+    i++ //此时i应指向结束"，跳过
+    return str.slice(start, end)
+  }
+  function parseArray() {
+    var result = []
+    i++ // 跳过[
+    if (str[i] == ']') {
+      i++
+      return result
+    }
+
+    while (true) {
+      var value = parseValue()
+      result.push(value)
+      if (str[i] === ',') {
+        i++
+        continue // 在数组内以','为分割，解析value并跳过',''
+      }
+      if (str[i] === ']') {
+        i++
+        break
+      }
+    }
+    return result
+  }
+
+  function parseObject() {
+    var result = {}
+    i++
+    if (str[i] === '}') {
+      i++
+      return result
+    }
+
+    while (true) {
+      var name = parseString() // 对象的属性名
+      i++ // 跳过':'
+      var value = parseValue() // 对象的属性值
+      result[name] = value
+      if (str[i] === ',') {
+        i++
+        continue
+      }
+      if (str[i] === '}') {
+        i++
+        break
+      }
+    }
+    return result
+  }
+
