@@ -318,34 +318,14 @@ class PriorityQueue {
 
 
 
+
 String.prototype.mymatch = function(regex) {
   var matches = []
   var match
   regex.lastIndex = 0
   if (regex.global) {
     while (match = regex.exec(this)) {
-      matches.push(match(0))
-    }
-    return matches
-  }
-  else {
-    return regex.exec(this)
-  }
-}
-
-String.prototype.mymatchAll = function(regex) {
-  if (regex instanceof RegExp) {
-    if (!regex.global) {
-      throw new TypeError('String.prototype.matchAll called with a non-global RegExp argument')
-    }
-  }
-  var regex = new RegExp(regex, 'g')
-  var matches = []
-  var match
-  regex.lastIndex = 0
-  if (regex.global) {
-    while (match = regex.exec(this)) {
-      matches.push(match)
+      matches.push(match[0])
     }
     return matches
   }
@@ -419,29 +399,29 @@ String.prototype.mysplit = function(regex) {
   }
 }
 
-String.prototype.myreplace = function (regex, replacer) {
-  regex.lastIndex = 0
-  var result = []
+String.prototype.myreplace = function (regexp, replacer) {
+  regexp.lastIndex = 0
+  var result = ''
   var match
   var lastLastIndex = 0
-  while (match = regex.exec(this)) {
+  while (match = regexp.exec(this)) {
     result += this.slice(lastLastIndex, match.index)
-    if (typeof replacer ===  'function') {
+    if (typeof replacer == 'function') {
       result += replacer(...match, match.index, match.input)
+    } else {
+      var replacement = replacer.myreplace(/\$([1-9\&])/g, (_, idx) => {
+        if (idx == '&') {
+          return match[0]
+        } else {
+          return match[idx]
+        }
+      })
+      result += replacement
     }
-    else {
-      result += this.slice(lastLastIndex, match.index)
-      if (typeof replacement === 'string') {
-        result += replacement
-      }
-      else if (typeof replacement === 'function') {
-        result += replacement(...match, match.index, match.input)
-      }
-      lastLastIndex = regex.lastIndex
-      if (!regex.global) {
-        lastLastIndex = match.index + match[0].length
-        break
-      }
+    lastLastIndex = regexp.lastIndex
+    if (!regexp.global) {
+      lastLastIndex = match.index + match[0].length
+      break
     }
   }
   result += this.slice(lastLastIndex)
