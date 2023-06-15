@@ -7,37 +7,45 @@
   <title>Document</title>
   <style>
     .solar-system {
-      position: relative;
-      width: 800px;
-      height: 800px;
+      width: 1000px;
+      height: 1000px;
       margin: 0 auto;
       background-color: #000;
     }
 
     .sun {
-      position: absolute;
-      top: 350px;
-      left: 350px;
+      position: fixed;
+      xtop: 350px;
+      xleft: 350px;
       width: 100px;
       height: 100px;
+      margin-top: -50px;
+      margin-left: -50px;
       border-radius: 9999px;
       background-color: #f00;
+      display: inline-block;
     }
 
     .earth {
-      position: absolute;
+      position: fixed;
       width: 50px;
       height: 50px;
+      margin-top: -25px;
+      margin-left: -25px;
       border-radius: 9999px;
       background-color: #00f;
+      display: inline-block;
     }
 
     .moon {
-      position: absolute;
-      width: 25px;
-      height: 25px;
+      position: fixed;
+      width: 20px;
+      height: 20px;
+      margin-top: -10px;
+      margin-left: -10px;
       border-radius: 9999px;
       background-color: #aaa;
+      display: inline-block;
     }
   </style>
 </head>
@@ -50,37 +58,60 @@
   </div>
 
   <script>
+    var sun = document.querySelector('.sun')
     var earth = document.querySelector('.earth')
     var moon = document.querySelector('.moon')
 
-    var angleEarth = 0
-    var angleMoon = 0
-    var lastTime = null
+    // var angleEarth = 0
+    // var angleMoon = 0
+    // var lastTime = null
 
-    function animate(time) {
-      time = Date.now()
+    // function animate(time) {
+    //   time = Date.now()
 
-      if (lastTime !== null) {
-        angleEarth += (time - lastTime) * 0.001
-        angleMoon += (time - lastTime) * 0.003
+    //   if (lastTime !== null) {
+    //     angleEarth += (time - lastTime) * 0.001
+    //     angleMoon += (time - lastTime) * 0.003
 
-      }
+    //   }
 
-      lastTime = time
+    //   lastTime = time
 
-      var earthX = 375 + Math.cos(angleEarth) * 200
-      var earthY = 375 + Math.sin(angleEarth) * 200
-      var moonX = 10 + earthX + Math.cos(angleMoon) * 50
-      var moonY = 10 + earthY + Math.sin(angleMoon) * 50
+    //   var earthX = 375 + Math.cos(angleEarth) * 200
+    //   var earthY = 375 + Math.sin(angleEarth) * 200
+    //   var moonX = 10 + earthX + Math.cos(angleMoon) * 50
+    //   var moonY = 10 + earthY + Math.sin(angleMoon) * 50
 
-      earth.style.left = earthX + "px"
-      earth.style.top = earthY + "px"
-      moon.style.left = moonX + "px"
-      moon.style.top = moonY + "px"
+    //   earth.style.left = earthX + "px"
+    //   earth.style.top = earthY + "px"
+    //   moon.style.left = moonX + "px"
+    //   moon.style.top = moonY + "px"
+
+    //   requestAnimationFrame(animate)
+    // }
+    // requestAnimationFrame(animate)
+
+    requestAnimationFrame(function animate(time) {
+      var sunAngle = time / 4000
+      var sunX = Math.cos(sunAngle) * 200 + window.innerWidth / 2 + 'px'
+      var sunY = Math.sin(sunAngle) * 200 + window.innerHeight / 2 + 'px'
+      sun.style.left = sunX
+      sun.style.top = sunY
+
+      var earthAngle = time / 900
+      var earthX = parseFloat(sunX) + Math.cos(earthAngle) * 200 + 'px'
+      var earthY = parseFloat(sunY) + Math.sin(earthAngle) * 200 + 'px'
+      earth.style.left = earthX
+      earth.style.top = earthY
+
+      var moonAngle = time / 200
+      var moonX = parseFloat(earthX) + Math.cos(moonAngle) * 50 + 'px'
+      var moonY = parseFloat(earthY) + Math.sin(moonAngle) * 50 + 'px'
+      moon.style.left = moonX
+      moon.style.top = moonY
 
       requestAnimationFrame(animate)
-    }
-    requestAnimationFrame(animate)
+    })
   </script>
 </body>
 
