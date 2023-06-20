@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #rect {
+      width: 200px;
+      height: 200px;
+      background-color: #597797;
+      position: fixed;
+      overflow: hidden;
+      resize: both;
+    }
+    #rect h1 {
+      margin: 0;
+      font-size: 14px;
+      background-color: #a9c6d3;
+      cursor: move;
+    }
+  </style>
+</head>
+<body>
+  <div id="rect" style="left: 0;top: 0;">
+    <h1>窗口</h1>
+  </div>
+
+
+  <script>
+    var startX, startY, offsetX, offsetY
+    var el = null
+    window.addEventListener('mousedown', event => {
+      if (event.target.matches('#rect > h1')) {
+        event.preventDefault()
+
+        el = event.target.closest('#rect')
+        startX = event.clientX
+        startY = event.clientY
+        elStartX = el.offsetLeft
+        elStartY = el.offsetTop
+
+        window.addEventListener('mousemove', onMove)
+      }
+    })
+
+    function onMove(event) {
+      if (event.which === 0 || event.buttons === 0) {
+        window.removeEventListener('mousemove', onMove)
+      }
+      else {
+        var moveX = event.clientX - startX
+        var moveY = event.clientY - startY
+        var left = elStartX + moveX
+        var top = elStartY + moveY
+        var threshold = 50
+
+        if (left < threshold) {
+          left = 0
+        }
+        if (left >= window.innerWidth - el.offsetWidth - threshold) {
+          left = window.innerWidth - el.offsetWidth
+        }
+        if (top < threshold) {
+          top = 0
+        }
+        if (top >= window.innerHeight - el.offsetHeight - threshold) {
+          top = window.innerHeight - el.offsetHeight
+        }
+        el.style.left = left + 'px'
+        el.style.top = top + 'px'
+
+
+      }
+    }
+
+
+  </script>
+</body>
+</html>
