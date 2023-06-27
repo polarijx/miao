@@ -156,10 +156,70 @@ var polarijx = {
     return result
   },
 
-  toPairs: function(object) {
+  toPairs: function (object) {
     if (object instanceof Map || object instanceof Set) {
       return Array.from(object.entries())
     }
     return Object.entries(object)
+  },
+
+  head: function (array) {
+    return array[0]
+  },
+
+  indexof: function (array, value, fromIndex = 0) {
+    for (var i = fromIndex; i < array.length; i++) {
+      if (array[i] === value) {
+        return i
+      }
+    }
+    return -1
+  },
+
+  lastIndexOf: function (array, value, fromIndex = array.length - 1) {
+    for (var i = fromIndex; i >= 0; i--) {
+      if (array[i] === value) {
+        return i
+      }
+    }
+    return -1
+  },
+
+  initial: function (array) {
+    return array.slice(0, array.length - 1)
+  },
+
+  join: function (array, separator=',') {
+    var result = ''
+    for (var val of array) {
+      result += val + separator
+    }
+    return result.slice(0, result.length - 1)
+  },
+
+  last: function (array) {
+    return array[array.length - 1]
+  },
+
+  pull: function (array, ...values) {
+    for (var i = array.length - 1; i >= 0; i--) {
+      if (values.includes(array[i])) {
+        array.splice(i, 1)
+      }
+    }
+    return array
+  },
+
+  reverse: function (array) {
+    var i = 0
+    var j = array.length - 1
+    while (i < j) {
+      var tem = array[i]
+      array[i] = array[j]
+      array[j] = tem
+      i++
+      j--
+    }
+    return array
   }
 }
