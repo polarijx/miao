@@ -18,14 +18,14 @@ var polarijx = {
   },
 
   fill: function (array, value, start = 0, end = array.length) {
-    for (var i = start; i < end; i ++) {
+    for (var i = start; i < end; i++) {
       array[i] = value
     }
     return array
   },
 
-  drop: function (array, n=1) {
-    return  array.slice(n)
+  drop: function (array, n = 1) {
+    return array.slice(n)
   },
 
   findLastIndex: function (array, predicate, fromIndex = array.length - 1) {
@@ -34,17 +34,17 @@ var polarijx = {
     ) {
       throw new Error('Invalid predicate type.')
     }
-    for (var i = fromIndex; i >= 0; i -- ) {
+    for (var i = fromIndex; i >= 0; i--) {
       if (Array.isArray(predicate)) {
         if (array[i][predicate[0]] === predicate[1]) {
           return i
         }
       }
-      if (typeof predicate === 'function' ) {
+      if (typeof predicate === 'function') {
         if (predicate(array[i], i, array))
-        return i
+          return i
       }
-      if(typeof predicate === 'object') {
+      if (typeof predicate === 'object') {
         var keys = Object.keys(predicate)
         var match = true
         for (var key of keys) {
@@ -72,17 +72,17 @@ var polarijx = {
     ) {
       throw new Error('Invalid predicate type.')
     }
-    for (var i = fromIndex; i < array.length; i ++ ) {
+    for (var i = fromIndex; i < array.length; i++) {
       if (Array.isArray(predicate)) {
         if (array[i][predicate[0]] === predicate[1]) {
           return i
         }
       }
-      if (typeof predicate === 'function' ) {
+      if (typeof predicate === 'function') {
         if (predicate(array[i], i, array))
-        return i
+          return i
       }
-      if(typeof predicate === 'object') {
+      if (typeof predicate === 'object') {
         var keys = Object.keys(predicate);
         var match = true;
         for (var key of keys) {
@@ -145,5 +145,21 @@ var polarijx = {
       }
       return result.concat(item)
     }, [])
+  },
+
+  fromPairs: function (pairs) {
+    var result = {}
+    for (var i = 0; i < pairs.length; i++) {
+      var [key, value] = pairs[i]
+      result[key] = value
+    }
+    return result
+  },
+
+  toPairs: function(object) {
+    if (object instanceof Map || object instanceof Set) {
+      return Array.from(object.entries())
+    }
+    return Object.entries(object)
   }
 }
