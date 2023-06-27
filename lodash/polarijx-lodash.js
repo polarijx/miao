@@ -192,7 +192,7 @@ var polarijx = {
   join: function (array, separator=',') {
     var result = ''
     for (var val of array) {
-      result += val + separator
+      result += val + '' + separator
     }
     return result.slice(0, result.length - 1)
   },
@@ -221,5 +221,9 @@ var polarijx = {
       j--
     }
     return array
+  },
+
+  every: function (collection, predicate = _.identiity) {
+
   }
 }
