@@ -189,7 +189,7 @@ var polarijx = {
     return array.slice(0, array.length - 1)
   },
 
-  join: function (array, separator=',') {
+  join: function (array, separator = ',') {
     var result = ''
     for (var val of array) {
       result += val + '' + separator
@@ -223,7 +223,93 @@ var polarijx = {
     return array
   },
 
-  every: function (collection, predicate = _.identiity) {
+  sum: function (array,) {
+    return array.reduce((a, b) => a + b, 0)
+  },
 
-  }
+  sumBy: function (array, iterator) {
+    var result = 0
+    if (typeof iterator == 'string') {
+      for (var i = 0; i < array.length; i++) {
+        result += array[i][iterator]
+      }
+    }
+
+    else {
+      for (var i = 0; i < array.length; i++) {
+        result += iterator(array[i])
+      }
+    }
+    return result
+  },
+
+  // filter: function (collection, predicate) {
+  //   var result = []
+  //   if (typeof predicate == 'string') {
+  //     for (var item of collection) {
+  //       if (item[predicate]) {
+  //         result.push(item)
+  //       }
+  //     }
+  //   }
+  //   else if (Array.isArray(predicate)) {
+  //     for (var item of collection) {
+  //       if (item[predicate[0]] === predicate[1]) {
+  //         result.push(item)
+  //       }
+  //     }
+  //   }
+  //   else if (typeof predicate == 'object') {
+  //     for (var item of collection) {
+  //       for (var key in predicate) {
+  //         if (item[key] !== predicate[key]) {
+  //           break
+  //         }
+  //       }
+  //     }
+  //     result.push(item)
+  //   }
+  //   else if (typeof predicate == 'function') {
+  //     for (var item of collection) {
+  //       if (predicate(item)) {
+  //         result.push(item)
+  //       }
+  //     }
+  //   }
+  //   return result
+  // },
+
+  filter: function (collection, predicate) {
+    var func = predicate
+    if (typeof predicate == 'string') {
+      func = function(it) {
+        return it[predicate]
+      }
+    }
+    else if (Array.isArray(predicate)) {
+      func = function(it) {
+        return it[predicate[0]] === predicate[1]
+      }
+    }
+    else if (typeof predicate == 'object') {
+      func = function(it) {
+        for (var key in predicate) {
+          if (it[key] !== predicate[key]) {
+            return false
+          }
+        }
+        return true
+      }
+    }
+
+    var result = []
+    for (var item of collection) {
+      if (func(item)) {
+        result.push(item)
+      }
+    }
+    return result
+  },
+
+
 }
