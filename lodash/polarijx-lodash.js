@@ -301,11 +301,6 @@ var polarijx = {
         return true
       }
     }
-    else if (typeof predicate == 'function') {
-      func = function (it) {
-        return predicate(it)
-      }
-    }
 
     var result = []
     for (var item of collection) {
@@ -321,11 +316,6 @@ var polarijx = {
     if (typeof iteratee == 'string') {
       func = function (it) {
         return it[iteratee]
-      }
-    }
-    else if (typeof iteratee == 'function') {
-      func = function (it) {
-        return iteratee(it)
       }
     }
     var result = []
