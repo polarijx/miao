@@ -282,23 +282,28 @@ var polarijx = {
   filter: function (collection, predicate) {
     var func = predicate
     if (typeof predicate == 'string') {
-      func = function(it) {
+      func = function (it) {
         return it[predicate]
       }
     }
     else if (Array.isArray(predicate)) {
-      func = function(it) {
+      func = function (it) {
         return it[predicate[0]] === predicate[1]
       }
     }
     else if (typeof predicate == 'object') {
-      func = function(it) {
+      func = function (it) {
         for (var key in predicate) {
           if (it[key] !== predicate[key]) {
             return false
           }
         }
         return true
+      }
+    }
+    else if (typeof iteratee == 'function') {
+      func = function (it) {
+        return iteratee(it)
       }
     }
 
@@ -311,5 +316,23 @@ var polarijx = {
     return result
   },
 
+  map: function (collection, iteratee) {
+    var func = iteratee
+    if (typeof iteratee == 'string') {
+      func = function (it) {
+        return it[iteratee]
+      }
+    }
+    else if (typeof iteratee == 'function') {
+      func = function (it) {
+        return iteratee(it)
+      }
+    }
+    var result = []
+    for (var i = 0; i < collection.length; i++) {
+      result.push(func(collection[i], i, collection))
+    }
+    return result
+  }
 
 }
