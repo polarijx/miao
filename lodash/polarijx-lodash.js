@@ -301,9 +301,9 @@ var polarijx = {
         return true
       }
     }
-    else if (typeof iteratee == 'function') {
+    else if (typeof predicate == 'function') {
       func = function (it) {
-        return iteratee(it)
+        return predicate(it)
       }
     }
 
@@ -333,6 +333,8 @@ var polarijx = {
       result.push(func(collection[i], i, collection))
     }
     return result
-  }
+  },
+
+
 
 }
