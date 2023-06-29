@@ -315,8 +315,12 @@ var polarijx = {
     var func = iteratee
     var result = []
     if (typeof iteratee == 'string') {
-      func = function (it) {
-        return it[iteratee]
+      func = function (obj) {
+        var keys = iteratee.split('.')
+        for (var key of keys) {
+          obj = obj[key]
+        }
+        return obj
       }
     }
     if (Array.isArray(collection)) {
