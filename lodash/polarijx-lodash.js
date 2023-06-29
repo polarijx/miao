@@ -313,14 +313,21 @@ var polarijx = {
 
   map: function (collection, iteratee) {
     var func = iteratee
+    var result = []
     if (typeof iteratee == 'string') {
       func = function (it) {
         return it[iteratee]
       }
     }
-    var result = []
-    for (var i = 0; i < collection.length; i++) {
-      result.push(func(collection[i], i, collection))
+    if (Array.isArray(collection)) {
+      for (var i = 0; i < collection.length; i++) {
+        result.push(func(collection[i], i, collection))
+      }
+    }
+    else if (typeof collection === 'object') {
+      for (var key in collection) {
+        result.push(func(collection[key]))
+      }
     }
     return result
   },
